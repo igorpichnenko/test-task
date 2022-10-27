@@ -1,13 +1,131 @@
 {
   "color": {
-    "base": {
-      "gray": {
-        "light" : { "value": "#CCCCCC" },
-        "medium": { "value": "#999999" },
-        "dark"  : { "value": "#111111" }
+    "background": {
+      "input": {
+        "primary": {
+          "default": {
+            "value": "#FAFAFA"
+          }
+        }
       },
-      "red": { "value": "#FF0000" },
-      "green": { "value": "#00FF00" }
+      "calendarDate": {
+        "primary": {
+          "default": {
+            "value": "transparent"
+          },
+          "hover": {
+            "value": "#4CA6FE",
+            "comment": "calendar cell title color"
+          }
+        }
+      },
+      "event": {
+        "primary": {
+          "default": {
+            "value": "rgba(242, 107, 81, 0.12)"
+          },
+          "hover": {
+            "value": "#F26B51"
+          }
+        }
+      },
+      "button": {
+        "primary": {
+          "default": {
+            "value": "#2B96F1"
+          },
+          "hover": {
+            "value": "#138AEF"
+          },
+          "active": {
+            "value": "#0F85E9"
+          },
+          "disable": {
+            "value": "#0F85E9"
+          }
+        },
+        "secondary": {
+          "hover": {
+            "value": "#FAFAFA"
+          },
+          "active": {
+            "value": "#F5F5F5"
+          }
+        }
+      }
+    },
+    "text": {
+      "newEventTitle": {
+        "primary": {
+          "default": {
+            "value": "#000000",
+            "comment": "form new event title color"
+          }
+        }
+      },
+      "calendarDate": {
+        "primary": {
+          "hover": {
+            "value": "#FFFFFF"
+          },
+          "holiday": {
+            "value": "#5CB85C"
+          },
+          "past": {
+            "value": "{color.font.past.value}"
+          }
+        }
+      },
+      "button": {
+        "primary": {
+          "default": {
+            "value": "#FFFFFF"
+          }
+        },
+        "secondary": {
+          "default": {
+            "value": "{color.font.primary.value}"
+          }
+        }
+      },
+      "input": {
+        "primary": {
+          "placeholder": {
+            "value": "#AAAAAA"
+          },
+          "default": {
+            "value": "{color.font.secondary.value}"
+          }
+        }
+      },
+      "event": {
+        "primary": {
+          "default": {
+            "value": "#FF7733"
+          },
+          "hover": {
+            "value": "#FFFFFF"
+          },
+          "past": {
+            "value": "rgba(255,119,51,0.7)"
+          }
+        }
+      }
+    },
+    "border": {
+      "input": {
+        "primary": {
+          "default": {
+            "value": "rgba(0, 0, 0, 0.1)"
+          },
+          "active": {
+            "value": "#198CFF"
+          },
+          "hover": {
+            "value": "#7FBFFE"
+          }
+        }
+      }
     }
   }
 }

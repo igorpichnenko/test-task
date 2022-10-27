@@ -1,15 +1,35 @@
 
 // Do not edit directly
-// Generated on Thu, 27 Oct 2022 05:18:12 GMT
+// Generated on Thu, 27 Oct 2022 07:12:45 GMT
 
-$color-base-gray-light: #cccccc;
-$color-base-gray-medium: #999999;
-$color-base-gray-dark: #111111;
-$color-base-red: #ff0000;
-$color-base-green: #00ff00;
-$color-font-base: #ff0000;
-$color-font-secondary: #00ff00;
-$color-font-tertiary: #cccccc;
+$color-background-input-primary-default: #fafafa;
+$color-background-calendar-date-primary-default: rgba(0, 0, 0, 0);
+$color-background-calendar-date-primary-hover: #4ca6fe; // calendar cell title color
+$color-background-event-primary-default: rgba(242, 107, 81, 0.12);
+$color-background-event-primary-hover: #f26b51;
+$color-background-button-primary-default: #2b96f1;
+$color-background-button-primary-hover: #138aef;
+$color-background-button-primary-active: #0f85e9;
+$color-background-button-primary-disable: #0f85e9;
+$color-background-button-secondary-hover: #fafafa;
+$color-background-button-secondary-active: #f5f5f5;
+$color-text-new-event-title-primary-default: #000000; // form new event title color
+$color-text-calendar-date-primary-hover: #ffffff;
+$color-text-calendar-date-primary-holiday: #5cb85c;
+$color-text-calendar-date-primary-past: #cccccc;
+$color-text-button-primary-default: #ffffff;
+$color-text-button-secondary-default: #828282;
+$color-text-input-primary-placeholder: #aaaaaa;
+$color-text-input-primary-default: #191919;
+$color-text-event-primary-default: #ff7733;
+$color-text-event-primary-hover: #ffffff;
+$color-text-event-primary-past: rgba(255, 119, 51, 0.7);
+$color-border-input-primary-default: rgba(0, 0, 0, 0.1);
+$color-border-input-primary-active: #198cff;
+$color-border-input-primary-hover: #7fbffe;
+$color-font-primary: #828282;
+$color-font-secondary: #191919;
+$color-font-past: #cccccc;
 $size-font-small: 0.75rem; // the small size of the font
 $size-font-medium: 1rem; // the medium size of the font
 $size-font-large: 2rem; // the large size of the font
