@@ -1,0 +1,27 @@
+{
+    "radius": {
+        "button": {
+            "value": "6px"
+        },
+        "event": {
+            "value": "4px"
+        },
+        "newEvent": {
+            "value": "8px"
+        },
+        "input": {
+            "value": "6px"
+        },
+        "calendarCell": {
+            "value": "8px"
+        },
+        "calendar": {
+            "default": {
+                "value": "25px"
+            },
+            "mobile": {
+                "value": "20px"
+            }
+        }
+    }
+}

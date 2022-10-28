@@ -125,6 +125,13 @@
             "value": "#7FBFFE"
           }
         }
+      },
+      "calendarCell": {
+        "primary": {
+          "default": {
+            "value": "#E8E8E8"
+          }
+        }
       }
     }
   }
