@@ -1,0 +1,61 @@
+{
+    "size": {
+        "base": {
+            "value": "3px"
+        },
+        "base-x1": {
+            "value": "{size.base.value}"
+        },
+        "base-x2": {
+            "value": "{size.base.value}*2"
+        },
+        "base-x3": {
+            "value": "{size.base.value}*3"
+        },
+        "base-x4": {
+            "value": "{size.base.value}*4"
+        },
+        "base-x5": {
+            "value": "{size.base.value}*5"
+        },
+        "base-x6": {
+            "value": "{size.base.value}*6"
+        },
+        "base-x7": {
+            "value": "{size.base.value}*7"
+        },
+        "base-x8": {
+            "value": "{size.base.value}*8"
+        },
+        "base-x10": {
+            "value": "{size.base.value}*10"
+        },
+        "base-x11": {
+            "value": "{size.base.value}*11"
+        },
+        "base-x12": {
+            "value": "{size.base.value}*12"
+        },
+        "base-x13": {
+            "value": "{size.base.value}*13"
+        },
+        "base-x14": {
+            "value": "{size.base.value}*14"
+        },
+        "base-x15": {
+            "value": "{size.base.value}*15"
+        },
+        "base-x16": {
+            "value": "{size.base.value}*16"
+        },
+        "base-x17": {
+            "value": "{size.base.value}*18"
+        },
+        "base-x19": {
+            "value": "{size.base.value}*19"
+        },
+        "base-x20": {
+            "value": "{size.base.value}*20"
+        }
+    }
+}

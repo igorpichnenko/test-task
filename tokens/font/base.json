@@ -113,6 +113,9 @@
         },
         "line-height": {
           "value": "18px"
+        },
+        "letter-spacing": {
+          "value": "0.005em"
         }
       }
     }
