@@ -17,7 +17,7 @@ export interface CalendarProps {
 const Calendar: React.FC<CalendarProps> = ({ events }) => {
 
 
-    const [state, setState] = useState({ date: moment() })
+    const [state, setState] = useState({ date: moment().add(3, 'month') })
 
     const prevMonth = () => {
         setState({ date: state.date.subtract(1, 'month') })
