@@ -19,6 +19,7 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
 
     const [calendarState, setCalendarState] = useState({ currentDate: moment(), eventsData })
     const [calendarDays, setCalendarDays] = useState<CalendarDays[]>()
+    const [currentCheckedDate, setCurrentCheckedDate] = useState("")
 
     useEffect(() => {
         const calendarDays = createDaysOfMonth(calendarState.currentDate)
@@ -26,6 +27,45 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
     }, [calendarState])
 
     return {
+        handleSubmit: (e: React.FormEvent<HTMLFormElement>) => {
+            e.preventDefault()
+
+            const events = calendarState.eventsData
+
+            const date = e.currentTarget.date.value
+            const event = e.currentTarget.event.value
+            const id = Math.random()
+            const text = e.currentTarget.text.value
+
+            if (date) {
+                const oldEvent = events.find((el) => el.date === date)
+
+                const newEvent = {
+                    event: [event],
+                    date,
+                    id,
+                    text
+                } as { event: string[], date: string, id: number, text: string }
+
+                if (oldEvent) {
+                    events.map((el) => {
+                        if (el.date === date) {
+                            return el.event.push(...newEvent.event)
+                        }
+                        return el
+                    })
+                    setCalendarState({
+                        ...calendarState, eventsData:
+                            [...calendarState.eventsData, newEvent]
+                    })
+                } else {
+                    setCalendarState({
+                        ...calendarState, eventsData:
+                            [...calendarState.eventsData, newEvent]
+                    })
+                }
+            }
+        },
         prevMonth: () => {
             setCalendarState({ ...calendarState, currentDate: calendarState.currentDate.subtract(1, 'month') })
         },
@@ -36,6 +76,9 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
             console.log(events, date, "events, date",)
         },
         handleClickCell: (calendarDays: CalendarDays[], date?: string) => {
+            if (date) {
+                setCurrentCheckedDate(date)
+            }
             const activeEvent = calendarDays.find((el) => el.date === date)
 
             calendarDays.forEach((el) => {
@@ -62,6 +105,7 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
 
         calendarState,
         setCalendarState,
-        calendarDays
+        calendarDays,
+        currentCheckedDate
     }
 }

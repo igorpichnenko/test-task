@@ -36,7 +36,6 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
         }
     }
 
-
     let mouth = Number(moment(refDate).format("MM")) + 1
     let year = refDate.year()
 
@@ -44,6 +43,7 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
         mouth = 1
         year = year + 1
     }
+
     for (let day = 1; day <= lastDate; day++) {
         const length = calendarDays.length
 

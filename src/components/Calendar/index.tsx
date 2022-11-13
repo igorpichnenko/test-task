@@ -3,21 +3,24 @@ import moment from 'moment';
 import "moment/locale/ru"
 import styles from "./index.module.scss"
 import { daysOfTheWeek } from '../../mocks';
-import { CalendarDays, useCalendarControl } from './useCalendarControl';
+import { useCalendarControl } from './useCalendarControl';
 import { Event } from '../ui/Event';
 import { EventForm } from '../EventForm';
 
 moment.locale("ru")
 
 export interface CalendarProps {
-    eventsData: CalendarDays[]
+    eventsData: {
+        id: number;
+        event: string[];
+        date: string;
+        text: string
+    }[]
 }
 
 const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
 
-    const { calendarState, prevMonth, nextMonth, handleClickEvent, handleClickCell, calendarDays } = useCalendarControl({ eventsData })
-
-
+    const { calendarState, prevMonth, nextMonth, handleClickEvent, handleClickCell, calendarDays, handleSubmit, currentCheckedDate } = useCalendarControl({ eventsData })
 
     return (
         <section className={styles.wrapper}>
@@ -45,13 +48,11 @@ const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
                                     <Event past={past} handleClickEvent={handleClickEvent} date={date} calendarState={calendarState} />
                                 </td>
                             ))}
-
                         </tr>
                     </tbody>
                 </table>
             </div>
-
-            <EventForm />
+            <EventForm onSubmit={handleSubmit} currentCheckedDate={currentCheckedDate} />
         </section>
     );
 }
