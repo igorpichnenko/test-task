@@ -14,8 +14,8 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
         nextMonth: () => {
             setCalendarState({ ...calendarState, currentDate: calendarState.currentDate.add(1, 'month') })
         },
-        handleClickCell: (date: string) => {
-            console.log(calendarState.eventsData.find((event) => event.date === date)?.event)
+        handleClickCell: (date: string, events: string[]) => {
+            console.log(events, date, "events, date")
         },
         calendarState,
         setCalendarState

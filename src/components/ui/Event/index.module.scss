@@ -1,7 +1,25 @@
-.event {
-  padding: 7px;
+.eventsWrapper {
+  display: inline-flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
 
-  &:focus {
-    border-color: #61dafb;
-  }
+.event {
+  padding: 3px 4px;
+  background: rgba(242, 107, 81, 0.12);
+  border-radius: 4px;
+
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+
+  color: #FF7733;
+
+}
+
+.event:hover {
+  color: #fff;
+  background: #F26B51;
 }

@@ -23,16 +23,16 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
     for (let day = 1; day < firstWeekday; day++) {
         const up = lastPrevDate - firstWeekday + day
         if (prevLastDate === 31) {
-            calendarDays.push({ value: up, color: "var(--color-text-calendar-date-primary-past)", id: up, date: `${up}/${prevMouth.format("MM/YYYY")}` });
+            calendarDays.push({ value: up, past: true, color: "var(--color-text-calendar-date-primary-past)", id: up, date: `${up}/${prevMouth.format("MM/YYYY")}` });
         }
         else if (prevLastDate === 28) {
-            calendarDays.push({ value: up - 3, color: "var(--color-text-calendar-date-primary-past)", id: up - 3, date: `${up - 3}/${prevMouth.format("MM/YYYY")}` });
+            calendarDays.push({ value: up - 3, past: true, color: "var(--color-text-calendar-date-primary-past)", id: up - 3, date: `${up - 3}/${prevMouth.format("MM/YYYY")}` });
         }
         else if (prevLastDate === 29) {
-            calendarDays.push({ value: up - 2, color: "var(--color-text-calendar-date-primary-past)", id: up - 2, date: `${up - 2}/${prevMouth.format("MM/YYYY")}` });
+            calendarDays.push({ value: up - 2, past: true, color: "var(--color-text-calendar-date-primary-past)", id: up - 2, date: `${up - 2}/${prevMouth.format("MM/YYYY")}` });
         }
         else {
-            calendarDays.push({ value: up - 1, color: "var(--color-text-calendar-date-primary-past)", id: up - 1, date: `${up - 1}/${prevMouth.format("MM/YYYY")}` });
+            calendarDays.push({ value: up - 1, past: true, color: "var(--color-text-calendar-date-primary-past)", id: up - 1, date: `${up - 1}/${prevMouth.format("MM/YYYY")}` });
         }
     }
 
@@ -80,11 +80,11 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
             && length % 7 !== 1
             && length % 7 !== 0) {
 
-            calendarDays.push({ value: day, id: day, opacity: "0.5", color: "var(--color-text-calendar-date-primary-holiday)", date: `${day}/${nextMouth}/${nextYear}` });
+            calendarDays.push({ value: day, id: day, past: true, opacity: "0.5", color: "var(--color-text-calendar-date-primary-holiday)", date: `${day}/${nextMouth}/${nextYear}` });
         }
         else {
             calendarDays.push({
-                value: day, id: day, color: "var(--color-text-calendar-date-primary-past)", date: `${day}/${nextMouth}/${nextYear}`
+                value: day, id: day, past: true, color: "var(--color-text-calendar-date-primary-past)", date: `${day}/${nextMouth}/${nextYear}`
             });
         }
     }
