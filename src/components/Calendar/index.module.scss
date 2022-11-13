@@ -21,8 +21,8 @@
 
     color: var(--color-font-primary);
 
-    padding-top: 18px;
-    padding-left: 19px;
+    padding-top: var(--size-base-x6);
+    padding-left: var(--size-base-x6);
 }
 
 .day:last-child {
@@ -43,8 +43,8 @@
     font-size: var(--font-calendar-date-large-font-size);
     line-height: var(--font-calendar-date-large-line-height);
 
-    padding-top: 18px;
-    padding-left: 19px;
+    padding-top: var(--size-base-x6);
+    padding-left: var(--size-base-x6);
 
     color: var(--color-font-primary);
 }
@@ -100,7 +100,7 @@
     line-height: var(--font-calendar-title-default-line-height);
     color: var(--color-font-secondary);
 
-    margin-bottom: 30px;
+    margin-bottom: var(--size-base-x10);
 
     text-align: center;
     text-transform: capitalize;

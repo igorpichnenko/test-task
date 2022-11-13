@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Sun, 13 Nov 2022 09:28:36 GMT
+ * Generated on Sun, 13 Nov 2022 10:19:00 GMT
  */
 
 :root {
@@ -78,22 +78,24 @@
   --radius-calendar-default: 25px;
   --radius-calendar-mobile: 20px;
   --size-base: 3px;
-  --size-base-x1: 3px;
-  --size-base-x2: 3px*2;
-  --size-base-x3: 3px*3;
-  --size-base-x4: 3px*4;
-  --size-base-x5: 3px*5;
-  --size-base-x6: 3px*6;
-  --size-base-x7: 3px*7;
-  --size-base-x8: 3px*8;
-  --size-base-x10: 3px*10;
-  --size-base-x11: 3px*11;
-  --size-base-x12: 3px*12;
-  --size-base-x13: 3px*13;
-  --size-base-x14: 3px*14;
-  --size-base-x15: 3px*15;
-  --size-base-x16: 3px*16;
-  --size-base-x17: 3px*18;
-  --size-base-x19: 3px*19;
-  --size-base-x20: 3px*20;
+  --size-base-x1: calc(3px);
+  --size-base-x2: calc(3px*2);
+  --size-base-x3: calc(3px*3);
+  --size-base-x4: calc(3px*4);
+  --size-base-x5: calc(3px*5);
+  --size-base-x6: calc(3px*6);
+  --size-base-x7: calc(3px*7);
+  --size-base-x8: calc(3px*8);
+  --size-base-x9: calc(3px*9);
+  --size-base-x10: calc(3px*10);
+  --size-base-x11: calc(3px*11);
+  --size-base-x12: calc(3px*12);
+  --size-base-x13: calc(3px*13);
+  --size-base-x14: calc(3px*14);
+  --size-base-x15: calc(3px*15);
+  --size-base-x16: calc(3px*16);
+  --size-base-x17: calc(3px*17);
+  --size-base-x18: calc(3px*18);
+  --size-base-x19: calc(3px*19);
+  --size-base-x20: calc(3px*20);
 }
