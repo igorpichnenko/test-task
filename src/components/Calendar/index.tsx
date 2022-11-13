@@ -16,15 +16,14 @@ export interface CalendarProps {
 
 const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
 
-    const [events, setEvents] = useState(eventsData)
-    const [state, setState] = useState({ date: moment() })
+    const [calendarState, setCalendarState] = useState({ currentDate: moment(), eventsData })
 
     const prevMonth = () => {
-        setState({ date: state.date.subtract(1, 'month') })
+        setCalendarState({ ...calendarState, currentDate: calendarState.currentDate.subtract(1, 'month') })
     }
 
     const nextMonth = () => {
-        setState({ date: state.date.add(1, 'month') })
+        setCalendarState({ ...calendarState, currentDate: calendarState.currentDate.add(1, 'month') })
     }
 
     return (
@@ -38,7 +37,7 @@ const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
             </div>
 
             <table className={styles.calendarWrapper}>
-                <caption className={styles.caption}>{state.date.format('MMMM YYYY')}</caption>
+                <caption className={styles.caption}>{calendarState.currentDate.format('MMMM YYYY')}</caption>
                 <tbody>
                     <tr className={styles.calendarContainer}>
                         <th className={styles.dayHeader}>MON</th>
@@ -48,15 +47,15 @@ const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
                         <th className={styles.dayHeader}>FRI</th>
                         <th className={styles.dayHeader}>SUN</th>
                         <th className={styles.dayHeader}>SAT</th>
-                        {createDaysOfMonth(state.date).map((el, i) => {
-                            return <td onClick={() => setEvents([...events, { id: el.id, event: " праздник", date: "21/10/2022" }])}
-                                key={`${el.id}-${i}`}
+                        {createDaysOfMonth(calendarState.currentDate).map((el, i) => {
+                            return <td onClick={() => setCalendarState({ ...calendarState, eventsData: [...calendarState.eventsData, { id: el.id, event: " праздник", date: "21/10/2022" }] })}
+                                key={el.date}
                                 style={{ opacity: el.opacity, color: el.color }}
                                 className={styles.day}>
                                 {el.value}
                                 <span style={{ color: "red" }}
-                                    onClick={() => console.log(events.find((event) => event.date === el.date)?.event)}
-                                >{events.find((event) => event.date === el.date)?.event}
+                                    onClick={() => console.log(calendarState.eventsData.find((event) => event.date === el.date)?.event)}
+                                >{calendarState.eventsData.find((event) => event.date === el.date)?.event}
                                 </span></td>
                         })}
                     </tr>
