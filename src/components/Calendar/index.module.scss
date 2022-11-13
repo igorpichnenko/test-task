@@ -33,8 +33,9 @@
     color: var(--color-font-primary);
 
     padding-top: var(--size-base-x6);
-    padding-left: var(--size-base-x6);
+    padding-left: var(--size-base-x4);
     padding-bottom: var(--size-base-x2);
+    padding-right: var(--size-base-x3);
 
     overflow: scroll;
 
@@ -125,14 +126,15 @@
 }
 
 .dayNumber {
-    display: block;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
+    padding: 10px;
+    box-sizing: border-box;
     width: 35px;
     height: 35px;
+    margin-bottom: var(--size-base-x1);
 
     border-radius: 50px;
 }
