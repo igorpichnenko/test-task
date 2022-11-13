@@ -20,17 +20,16 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
     for (let w = 1; w < firstWeekday; w++) {
         const up = lastPrevDate - firstWeekday + w
         if (prevLastDate === 31) {
-
-            calendarDays.push({ value: up + 1, opacity: "0.5", id: up + 1, date: `${up + 1}/${prevMouth.format("MM/YYYY")}` });
+            calendarDays.push({ value: up, opacity: "0.5", id: up, date: `${up}/${prevMouth.format("MM/YYYY")}` });
         }
         else if (prevLastDate === 28) {
-            calendarDays.push({ value: up - 2, opacity: "0.5", id: up + 1, date: `${up + 1}/${prevMouth.format("MM/YYYY")}` });
+            calendarDays.push({ value: up - 3, opacity: "0.5", id: up - 3, date: `${up - 3}/${prevMouth.format("MM/YYYY")}` });
         }
         else if (prevLastDate === 29) {
-            calendarDays.push({ value: up - 1, opacity: "0.5", id: up + 1, date: `${up + 1}/${prevMouth.format("MM/YYYY")}` });
+            calendarDays.push({ value: up - 2, opacity: "0.5", id: up - 2, date: `${up - 2}/${prevMouth.format("MM/YYYY")}` });
         }
         else {
-            calendarDays.push({ value: up, opacity: "0.5", id: up, date: `${up}/${prevMouth.format("MM/YYYY")}` });
+            calendarDays.push({ value: up - 1, opacity: "0.5", id: up - 1, date: `${up - 1}/${prevMouth.format("MM/YYYY")}` });
         }
     }
 
