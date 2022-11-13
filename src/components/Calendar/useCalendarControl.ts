@@ -33,7 +33,7 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
             const events = calendarState.eventsData
 
             const date = e.currentTarget.date.value
-            const subtitle = e.currentTarget.event.value
+            const subtitle = e.currentTarget.subtitle.value
             const id = Math.random()
             const text = e.currentTarget.text.value
 

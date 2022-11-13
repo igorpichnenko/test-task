@@ -34,8 +34,13 @@
 
     padding-top: var(--size-base-x6);
     padding-left: var(--size-base-x6);
+    padding-bottom: var(--size-base-x2);
 
     overflow: scroll;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .day:last-child {
