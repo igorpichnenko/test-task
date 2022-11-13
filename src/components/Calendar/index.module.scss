@@ -1,10 +1,17 @@
+.wrapper {
+    background: #FFFFFF;
+    border-radius: 25px;
+
+    display: flex;
+    column-gap: 30px;
+    min-width: 1400px;
+    max-width: 1480px;
+}
+
 .calendar {
     max-width: 1028px;
     position: relative;
-
-    background: #FFFFFF;
-    border-radius: 25px;
-    padding: 30px 30px 80px 30px;
+    padding: 0 0 80px 30px;
 }
 
 .calendarBody {
@@ -92,7 +99,7 @@
 }
 
 .pagingButton:last-child {
-    right: 40px;
+    right: 10px;
 
     .icon {
         transform: rotate(-45deg);
@@ -131,4 +138,6 @@
     line-height: var(--font-calendar-title-secondary-line-height);
     letter-spacing: var(--font-calendar-title-secondary-letter-spacing);
     color: var(--color-font-secondary);
+
+    margin-bottom: var(--size-base-x16);
 }

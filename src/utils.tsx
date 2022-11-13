@@ -47,16 +47,19 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
     for (let day = 1; day <= lastDate; day++) {
         const length = calendarDays.length
 
-        if (currentDay === day && currentYear === year && currentMouth === mouth) {
-            calendarDays.push({ value: day, id: day, backgroundColor: "var(--color-background-calendar-date-primary-hover)", color: "var(--color-background-body-primary)", date: `${day}/${mouth}/${year}` });
-        }
-        else if (length % 7 !== 4
+        if (length % 7 !== 4
             && length % 7 !== 3
             && length % 7 !== 2
             && length % 7 !== 1
             && length % 7 !== 0) {
 
-            calendarDays.push({ value: day, id: day, color: "var(--color-text-calendar-date-primary-holiday)", date: `${day}/${mouth}/${year}` });
+            if (currentDay === day && currentYear === year && currentMouth === mouth) {
+                calendarDays.push({ value: day, id: day, holiday: true, backgroundColor: "var(--color-background-calendar-date-primary-hover)", color: "var(--color-background-body-primary)", date: `${day}/${mouth}/${year}` });
+            } else {
+                calendarDays.push({ value: day, id: day, holiday: true, color: "var(--color-text-calendar-date-primary-holiday)", date: `${day}/${mouth}/${year}` });
+            }
+        } else if (currentDay === day && currentYear === year && currentMouth === mouth) {
+            calendarDays.push({ value: day, id: day, backgroundColor: "var(--color-background-calendar-date-primary-hover)", color: "var(--color-background-body-primary)", date: `${day}/${mouth}/${year}` });
         }
         else {
             calendarDays.push({ value: day, id: day, date: `${day}/${mouth}/${year}` });
@@ -80,7 +83,7 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
             && length % 7 !== 1
             && length % 7 !== 0) {
 
-            calendarDays.push({ value: day, id: day, past: true, opacity: "0.5", color: "var(--color-text-calendar-date-primary-holiday)", date: `${day}/${nextMouth}/${nextYear}` });
+            calendarDays.push({ value: day, id: day, past: true, holiday: true, opacity: "0.5", color: "var(--color-text-calendar-date-primary-holiday)", date: `${day}/${nextMouth}/${nextYear}` });
         }
         else {
             calendarDays.push({
