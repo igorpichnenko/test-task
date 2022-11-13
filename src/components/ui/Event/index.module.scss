@@ -6,20 +6,17 @@
 
 .event {
   padding: 3px 4px;
-  background: rgba(242, 107, 81, 0.12);
+  background: var(--color-background-event-primary-default);
   border-radius: 4px;
 
-  font-family: 'Helvetica Neue';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 18px;
+  font-weight: var(--font-event-large-font-weight);
+  font-size: var(--font-event-large-font-size);
+  line-height: var(--font-event-large-line-height);
 
-  color: #FF7733;
-
+  color: var(--color-text-event-primary-default);
 }
 
 .event:hover {
-  color: #fff;
-  background: #F26B51;
+  color: var(--color-text-event-primary-hover);
+  background: var(--color-background-event-primary-hover);
 }

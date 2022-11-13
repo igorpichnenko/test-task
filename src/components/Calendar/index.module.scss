@@ -1,6 +1,10 @@
 .calendar {
     max-width: 1028px;
     position: relative;
+
+    background: #FFFFFF;
+    border-radius: 25px;
+    padding: 30px 30px 80px 30px;
 }
 
 .calendarBody {
@@ -23,6 +27,8 @@
 
     padding-top: var(--size-base-x6);
     padding-left: var(--size-base-x6);
+
+    overflow: scroll;
 }
 
 .day:last-child {
@@ -77,7 +83,7 @@
 
 
 .pagingButton:first-child {
-    left: 10px;
+    left: 40px;
 
     .icon {
         transform: rotate(135deg);
@@ -86,7 +92,7 @@
 }
 
 .pagingButton:last-child {
-    right: 10px;
+    right: 40px;
 
     .icon {
         transform: rotate(-45deg);
