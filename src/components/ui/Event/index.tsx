@@ -9,7 +9,7 @@ interface EventPropsTypes {
 }
 export type { EventPropsTypes };
 
-const Event = ({
+export const Event = ({
   text,
   placeholder,
   disabled,
@@ -20,4 +20,3 @@ const Event = ({
   );
 };
 
-export default Event;

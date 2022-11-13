@@ -9,11 +9,11 @@ interface TextInputPropsTypes {
 }
 export type { TextInputPropsTypes };
 
-const TextInput = ({
+export const TextInput = ({
   value,
   placeholder,
   disabled,
-  onChange = () => {},
+  onChange = () => { },
 }: TextInputPropsTypes) => {
   return (
     <input
@@ -27,4 +27,3 @@ const TextInput = ({
   );
 };
 
-export default TextInput;

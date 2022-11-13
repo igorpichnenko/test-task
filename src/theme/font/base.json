@@ -75,6 +75,20 @@
         "line-height": {
           "value": "28px"
         }
+      },
+      "secondary": {
+        "font-size": {
+          "value": "34px"
+        },
+        "font-weight": {
+          "value": "700"
+        },
+        "line-height": {
+          "value": "38px"
+        },
+        "letter-spacing": {
+          "value": "0.3px"
+        }
       }
     },
     "newEventTitle": {

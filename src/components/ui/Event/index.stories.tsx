@@ -2,7 +2,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import Event, { EventPropsTypes } from './index';
+import { EventPropsTypes, Event } from './index';
 
 export default {
   title: 'UI components/Event',

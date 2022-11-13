@@ -1,9 +1,11 @@
 /**
  * Do not edit directly
- * Generated on Sun, 13 Nov 2022 06:33:39 GMT
+ * Generated on Sun, 13 Nov 2022 09:28:36 GMT
  */
 
 :root {
+  --color-background-body-primary: #fff;
+  --color-background-body-secondary: #E5E5E5;
   --color-background-input-primary-default: #FAFAFA;
   --color-background-calendar-date-primary-default: transparent;
   --color-background-calendar-date-primary-hover: #4CA6FE; /* calendar cell title color */
@@ -54,6 +56,10 @@
   --font-calendar-title-default-font-size: 24px;
   --font-calendar-title-default-font-weight: 500;
   --font-calendar-title-default-line-height: 28px;
+  --font-calendar-title-secondary-font-size: 34px;
+  --font-calendar-title-secondary-font-weight: 700;
+  --font-calendar-title-secondary-line-height: 38px;
+  --font-calendar-title-secondary-letter-spacing: 0.3px;
   --font-new-event-title-default-font-size: 18px;
   --font-new-event-title-default-font-weight: 500;
   --font-new-event-title-default-line-height: 22px;

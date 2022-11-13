@@ -1,102 +1,128 @@
-.calendarWrapper {}
+.calendar {
+    max-width: 1028px;
+    position: relative;
+}
 
-.calendarContainer {
+.calendarBody {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
 }
 
-.pagingButton {
-    display: inline-block;
-    background-color: #3f51b5;
-    color: #ffffff;
-    font-size: 24px;
-    border: none;
-    border-radius: 4px;
-    margin: 12px;
-    cursor: pointer;
-
-    &:hover {
-        background-color: #334296;
-    }
-}
-
 .day {
     box-sizing: border-box;
-    font-size: 24px;
-    padding: 8px;
-    background-color: #f0f0f0;
-    color: #000;
-    border: 2px solid #ffffff;
+    border: 1px solid var(--color-border-calendar-cell-primary-default);
     width: 146.86px;
     height: 141px;
 
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 23px;
+    font-weight: var(--font-calendar-date-large-font-weight);
+    font-size: var(--font-calendar-date-large-font-size);
+    line-height: var(--font-calendar-date-large-line-height);
 
 
-    color: #828282;
+    color: var(--color-font-primary);
 
+    padding-top: 18px;
+    padding-left: 19px;
+}
 
+.day:last-child {
+    border-radius: 0px 0px var(--radius-calendar-cell) 0px;
+}
+
+.day:nth-last-of-type(7) {
+    border-radius: 0px 0px 0px var(--radius-calendar-cell);
 }
 
 .dayHeader {
     box-sizing: border-box;
-    font-size: 24px;
-    padding: 8px;
-    background-color: #f0f0f0;
-    color: #000;
-    border: 2px solid #ffffff;
-    height: 64px;
-    text-align: center;
-    font-size: 16px;
-    padding-top: 12px;
+    border: 1px solid var(--color-border-calendar-cell-primary-default);
+    text-align: left;
     width: 146.86px;
     height: 59px;
+    font-weight: var(--font-calendar-date-large-font-weight);
+    font-size: var(--font-calendar-date-large-font-size);
+    line-height: var(--font-calendar-date-large-line-height);
 
-    font-family: 'Helvetica Neue';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 23px;
+    padding-top: 18px;
+    padding-left: 19px;
 
-
-
-    color: #828282;
-
-
+    color: var(--color-font-primary);
 }
 
+.dayHeader:first-child {
+    border-radius: var(--radius-calendar-cell) 0px 0px 0px;
+}
+
+.dayHeader:nth-child(7) {
+    border-radius: 0px var(--radius-calendar-cell) 0px 0px;
+}
+
+.pagingButton {
+    display: block;
+    border: unset;
+    cursor: pointer;
+    position: absolute;
+    background-color: transparent
+}
+
+.icon {
+    border: solid var(--color-font-primary);
+    border-width: 0 2.5px 2.5px 0;
+    border-radius: 2px;
+    display: inline-block;
+    padding: 3px;
+    width: 8px;
+    height: 8px
+}
+
+
+.pagingButton:first-child {
+    left: 10px;
+
+    .icon {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+    }
+}
+
+.pagingButton:last-child {
+    right: 10px;
+
+    .icon {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
+}
+
+
 .caption {
-    font-size: 24px;
-    line-height: 28px;
+    font-size: var(--font-calendar-title-default-font-size);
+    line-height: var(--font-calendar-title-default-line-height);
+    color: var(--color-font-secondary);
+
     margin-bottom: 30px;
+
     text-align: center;
-    color: #191919;
     text-transform: capitalize;
 }
 
+.dayNumber {
+    display: block;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50px;
+}
+
 .title {
-
-    width: 1380px;
-    height: 38px;
-
-    font-family: 'Helvetica Neue';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 34px;
-    line-height: 38px;
-
-    /* identical to box height, or 112% */
-    letter-spacing: 0.3px;
-
-    color: #191919;
-
-
-    /* Inside auto layout */
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
+    font-weight: var(--font-calendar-title-secondary-font-weight);
+    font-size: var(--font-calendar-title-secondary-font-size);
+    line-height: var(--font-calendar-title-secondary-line-height);
+    letter-spacing: var(--font-calendar-title-secondary-letter-spacing);
+    color: var(--color-font-secondary);
 }

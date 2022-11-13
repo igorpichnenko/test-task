@@ -2,7 +2,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import TextInput, { TextInputPropsTypes } from './index';
+import { TextInputPropsTypes, TextInput } from './index';
 
 export default {
   title: 'UI components/TextInput',

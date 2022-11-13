@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import moment from 'moment';
 import "moment/locale/ru"
 import styles from "./index.module.scss"
@@ -21,37 +21,38 @@ const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
     const { calendarState, prevMonth, nextMonth, handleClickCell } = useCalendarControl({ eventsData })
 
     return (
-        <div style={{ maxWidth: "1028px" }}>
+        <div className={styles.calendar}>
+            <h2 className={styles.title}>Календарь</h2>
 
-            <h2>Календарь</h2>
+            <div>
 
-            <div style={{ position: "relative" }}>
-                <button style={{ position: "absolute" }} className={styles.pagingButton} onClick={prevMonth}>&lt;</button>
-                <button style={{ position: "absolute", right: "0" }} className={styles.pagingButton} onClick={nextMonth}>&gt;</button>
+                <button className={styles.pagingButton} onClick={prevMonth}> <i className={styles.icon}></i></button>
+
+                <button className={styles.pagingButton} onClick={nextMonth}> <i className={styles.icon}></i></button>
             </div>
 
-            <table className={styles.calendarWrapper}>
+            <table>
                 <caption className={styles.caption}>{calendarState.currentDate.format('MMMM YYYY')}</caption>
                 <tbody>
-                    <tr className={styles.calendarContainer}>
+                    <tr className={styles.calendarBody}>
                         {daysOfTheWeek.map((el) => (
                             <th className={styles.dayHeader} key={el}>{el}</th>
                         ))}
 
-                        {createDaysOfMonth(calendarState.currentDate).map(({ date, opacity, color, value }) => {
+                        {createDaysOfMonth(calendarState.currentDate).map(({ date, opacity, color, value, backgroundColor }) => {
                             return <td
                                 key={date}
-                                style={{ opacity, color }}
                                 className={styles.day}>
-                                {value}
-                                <span style={{ color: "red" }}
-                                    onClick={() => handleClickCell(date)}
-                                >{calendarState.eventsData.find((event) => event.date === date)?.event}
+                                <span className={styles.dayNumber} style={{ backgroundColor, opacity, color }}>{value}</span>
+                                <span onClick={() => handleClickCell(date)}>{calendarState.eventsData.find((event) => event.date === date)?.event}
                                 </span></td>
                         })}
+
                     </tr>
                 </tbody>
-            </table></div>);
+            </table>
+        </div>
+    );
 }
 
 export default Calendar;

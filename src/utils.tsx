@@ -4,6 +4,9 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
 
     const date = moment(refDate).endOf('month');
     const lastDate = date.date();
+    const currentDay = new Date().getDate()
+    const currentMouth = new Date().getMonth() + 1
+    const currentYear = new Date().getFullYear()
 
     let firstWeekday = date.startOf('month').day();
     if (firstWeekday === 0) firstWeekday = 7
@@ -41,10 +44,13 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
         mouth = 1
         year = year + 1
     }
-
     for (let day = 1; day <= lastDate; day++) {
         const length = calendarDays.length
-        if (length % 7 !== 4
+
+        if (currentDay === day && currentYear === year && currentMouth === mouth) {
+            calendarDays.push({ value: day, id: day, backgroundColor: "var(--color-background-calendar-date-primary-hover)", color: "var(--color-background-body-primary)", date: `${day}/${mouth}/${year}` });
+        }
+        else if (length % 7 !== 4
             && length % 7 !== 3
             && length % 7 !== 2
             && length % 7 !== 1
@@ -66,6 +72,7 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
     }
 
     for (let day = 1; calendarDays.length % 7 !== 0; day++) {
+
         const length = calendarDays.length
         if (length % 7 !== 4
             && length % 7 !== 3

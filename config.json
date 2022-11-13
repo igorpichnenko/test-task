@@ -10,7 +10,7 @@
         "name/cti/kebab",
         "size/px"
       ],
-      "buildPath": "./src/variables/css/",
+      "buildPath": "./src/assets/variables/css/",
       "files": [
         {
           "destination": "_variables.css",

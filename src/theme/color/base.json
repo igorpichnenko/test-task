@@ -1,6 +1,14 @@
 {
   "color": {
     "background": {
+      "body": {
+        "primary": {
+          "value": "#fff"
+        },
+        "secondary": {
+          "value": "#E5E5E5"
+        }
+      },
       "input": {
         "primary": {
           "default": {
