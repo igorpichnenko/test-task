@@ -1,14 +1,12 @@
 import React from 'react';
-import { CalendarProps } from '../../Calendar';
+import { CalendarProps, eventsData } from '../../Calendar';
 import styles from './index.module.scss';
-
-interface EventPropsTypes {
+export interface EventPropsTypes {
   date?: string;
-  handleClickEvent: (events: string[], date?: string) => void;
+  handleClickEvent: (events: { subtitle: string, text: string }[], date?: string, detailedEvent?: eventsData) => void;
   calendarState: CalendarProps,
   past?: boolean;
 }
-export type { EventPropsTypes };
 
 export const Event = ({
   date,
@@ -18,7 +16,9 @@ export const Event = ({
   ...props
 }: EventPropsTypes) => {
 
-  let events = calendarState.eventsData.find((event) => event.date === date)?.event ?? []
+
+  const detailedEvent = calendarState.eventsData.find((event) => event.date === date)
+  const events = detailedEvent?.event ?? []
 
   if (!events || !events.length) return null
 
@@ -26,10 +26,10 @@ export const Event = ({
     <span className={styles.eventsWrapper}>
       {events.map((el, i) => {
         let event = el
-        if (el.length >= 16) {
-          event = `${el.slice(0, 16)}...`
+        if (el.subtitle.length >= 16) {
+          event = { ...event, subtitle: `${el.subtitle.slice(0, 16)}...` }
         }
-        return <span onClick={() => handleClickEvent(events, date)} key={`${el}${i}`} style={{ opacity: `${past && 0.5}` }} className={styles.event} {...props}>{event}</span>
+        return <span onClick={() => handleClickEvent(events, date, detailedEvent)} key={`${el}${i}`} style={{ opacity: `${past && 0.5}` }} className={styles.event} {...props}>{event.subtitle}</span>
       })}
 
     </span>

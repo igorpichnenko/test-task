@@ -1,6 +1,6 @@
 import moment from "moment"
 import { useEffect, useState } from "react"
-import { CalendarProps } from "."
+import { CalendarProps, eventsData } from "."
 import { createDaysOfMonth } from "../../utils";
 
 export interface CalendarDays {
@@ -33,7 +33,7 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
             const events = calendarState.eventsData
 
             const date = e.currentTarget.date.value
-            const event = e.currentTarget.event.value
+            const subtitle = e.currentTarget.event.value
             const id = Math.random()
             const text = e.currentTarget.text.value
 
@@ -41,11 +41,10 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
                 const oldEvent = events.find((el) => el.date === date)
 
                 const newEvent = {
-                    event: [event],
+                    event: [{ subtitle, text }],
                     date,
-                    id,
-                    text
-                } as { event: string[], date: string, id: number, text: string }
+                    id
+                } as { event: { text: string, subtitle: string }[], date: string, id: number }
 
                 if (oldEvent) {
                     events.map((el) => {
@@ -72,8 +71,8 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
         nextMonth: () => {
             setCalendarState({ ...calendarState, currentDate: calendarState.currentDate.add(1, 'month') })
         },
-        handleClickEvent: (events: string[], date?: string,) => {
-            console.log(events, date, "events, date",)
+        handleClickEvent: (events: { subtitle: string, text: string }[], date?: string, detailedEvent?: eventsData) => {
+            console.log("detailedEvent", detailedEvent, "events", events, "date", date)
         },
         handleClickCell: (calendarDays: CalendarDays[], date?: string) => {
             if (date) {

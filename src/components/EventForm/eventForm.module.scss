@@ -2,9 +2,11 @@
     display: flex;
     flex-direction: column;
 
+    row-gap: 15px;
+
     margin-top: 141px;
 
-    padding: 20px;
+    padding: 20px 20px 20px 20px;
 
     width: 322px;
     height: 325px;
@@ -12,5 +14,69 @@
     background: #FFFFFF;
     border: 1px solid #E8E8E8;
     border-radius: 8px;
+}
 
+.title {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+
+    color: #000000;
+}
+
+.input {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+
+    color: #AAAAAA;
+
+    box-sizing: border-box;
+    padding: 8px 10px;
+
+    width: 100%;
+    height: 36px;
+
+    background: #FAFAFA;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+.textArea {
+    box-sizing: border-box;
+
+    padding: 8px 10px;
+
+    width: 100%;
+    height: 85px;
+
+    background: #FAFAFA;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+
+    color: #AAAAAA;
+}
+
+.button {
+    padding: 9px 18px;
+
+    width: 100%;
+    height: 36px;
+
+    background: #2B96F1;
+    border-radius: 6px;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+
+    letter-spacing: 0.005em;
+
+    color: #FFFFFF;
+
+    border: unset;
 }

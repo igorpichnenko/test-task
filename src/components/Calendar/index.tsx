@@ -9,18 +9,23 @@ import { EventForm } from '../EventForm';
 
 moment.locale("ru")
 
+export interface eventsData {
+    id: number;
+    event: { text: string, subtitle: string }[];
+    date: string;
+}
 export interface CalendarProps {
-    eventsData: {
-        id: number;
-        event: string[];
-        date: string;
-        text: string
-    }[]
+    eventsData: eventsData[]
 }
 
 const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
 
-    const { calendarState, prevMonth, nextMonth, handleClickEvent, handleClickCell, calendarDays, handleSubmit, currentCheckedDate } = useCalendarControl({ eventsData })
+    const {
+        calendarState, prevMonth,
+        nextMonth, handleClickEvent,
+        handleClickCell, calendarDays,
+        handleSubmit, currentCheckedDate
+    } = useCalendarControl({ eventsData })
 
     return (
         <section className={styles.wrapper}>
