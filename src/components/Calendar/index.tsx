@@ -3,6 +3,8 @@ import moment from 'moment';
 import "moment/locale/ru"
 import styles from "./index.module.scss"
 import { createDaysOfMonth } from '../../utils';
+import { daysOfTheWeek } from '../../mocks';
+import { useCalendarControl } from './useCalendarControl';
 
 moment.locale("ru")
 
@@ -16,15 +18,7 @@ export interface CalendarProps {
 
 const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
 
-    const [calendarState, setCalendarState] = useState({ currentDate: moment(), eventsData })
-
-    const prevMonth = () => {
-        setCalendarState({ ...calendarState, currentDate: calendarState.currentDate.subtract(1, 'month') })
-    }
-
-    const nextMonth = () => {
-        setCalendarState({ ...calendarState, currentDate: calendarState.currentDate.add(1, 'month') })
-    }
+    const { calendarState, prevMonth, nextMonth, handleClickCell } = useCalendarControl({ eventsData })
 
     return (
         <div style={{ maxWidth: "1028px" }}>
@@ -40,22 +34,19 @@ const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
                 <caption className={styles.caption}>{calendarState.currentDate.format('MMMM YYYY')}</caption>
                 <tbody>
                     <tr className={styles.calendarContainer}>
-                        <th className={styles.dayHeader}>MON</th>
-                        <th className={styles.dayHeader}>TUE</th>
-                        <th className={styles.dayHeader}>WED</th>
-                        <th className={styles.dayHeader}>THUR</th>
-                        <th className={styles.dayHeader}>FRI</th>
-                        <th className={styles.dayHeader}>SUN</th>
-                        <th className={styles.dayHeader}>SAT</th>
-                        {createDaysOfMonth(calendarState.currentDate).map((el, i) => {
-                            return <td onClick={() => setCalendarState({ ...calendarState, eventsData: [...calendarState.eventsData, { id: el.id, event: " праздник", date: "21/10/2022" }] })}
-                                key={el.date}
-                                style={{ opacity: el.opacity, color: el.color }}
+                        {daysOfTheWeek.map((el) => (
+                            <th className={styles.dayHeader} key={el}>{el}</th>
+                        ))}
+
+                        {createDaysOfMonth(calendarState.currentDate).map(({ date, opacity, color, value }) => {
+                            return <td
+                                key={date}
+                                style={{ opacity, color }}
                                 className={styles.day}>
-                                {el.value}
+                                {value}
                                 <span style={{ color: "red" }}
-                                    onClick={() => console.log(calendarState.eventsData.find((event) => event.date === el.date)?.event)}
-                                >{calendarState.eventsData.find((event) => event.date === el.date)?.event}
+                                    onClick={() => handleClickCell(date)}
+                                >{calendarState.eventsData.find((event) => event.date === date)?.event}
                                 </span></td>
                         })}
                     </tr>

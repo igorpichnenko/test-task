@@ -7,3 +7,5 @@ export const eventsData =
         { id: 10, event: " проверить почту", date: "17/11/2022" },
         { id: 11, event: " созвон", date: "3/12/2022" },
     ]
+
+export const daysOfTheWeek = ["MON", "TUE", "WED", "THUR", "FRI", "SUN", "SAT"]
