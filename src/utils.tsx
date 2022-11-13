@@ -4,9 +4,12 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
 
     const date = moment(refDate).endOf('month');
     const lastDate = date.date();
+
     let firstWeekday = date.startOf('month').day();
     if (firstWeekday === 0) firstWeekday = 7
+
     const calendarDays = [];
+
     const prev = moment()
     const prevDate = moment(prev.subtract(1, 'month')).endOf('month');
     const lastPrevDate = prevDate.date() + 1

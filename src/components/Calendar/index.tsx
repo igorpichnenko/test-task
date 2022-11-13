@@ -7,17 +7,17 @@ import { createDaysOfMonth } from '../../utils';
 moment.locale("ru")
 
 export interface CalendarProps {
-    events: {
+    eventsData: {
         id: number,
         event: string,
         date: string
     }[]
 }
 
-const Calendar: React.FC<CalendarProps> = ({ events }) => {
+const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
 
-
-    const [state, setState] = useState({ date: moment().add(3, 'month') })
+    const [events, setEvents] = useState(eventsData)
+    const [state, setState] = useState({ date: moment() })
 
     const prevMonth = () => {
         setState({ date: state.date.subtract(1, 'month') })
@@ -49,7 +49,7 @@ const Calendar: React.FC<CalendarProps> = ({ events }) => {
                         <th className={styles.dayHeader}>SUN</th>
                         <th className={styles.dayHeader}>SAT</th>
                         {createDaysOfMonth(state.date).map((el, i) => {
-                            return <td onClick={() => console.log("day", el.date)}
+                            return <td onClick={() => setEvents([...events, { id: el.id, event: " праздник", date: "21/10/2022" }])}
                                 key={`${el.id}-${i}`}
                                 style={{ opacity: el.opacity, color: el.color }}
                                 className={styles.day}>

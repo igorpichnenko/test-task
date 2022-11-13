@@ -1,0 +1,93 @@
+/**
+ * Do not edit directly
+ * Generated on Sun, 13 Nov 2022 06:04:33 GMT
+ */
+
+:root {
+  --color-background-input-primary-default: #FAFAFA;
+  --color-background-calendar-date-primary-default: transparent;
+  --color-background-calendar-date-primary-hover: #4CA6FE; /* calendar cell title color */
+  --color-background-event-primary-default: rgba(242, 107, 81, 0.12);
+  --color-background-event-primary-hover: #F26B51;
+  --color-background-button-primary-default: #2B96F1;
+  --color-background-button-primary-hover: #138AEF;
+  --color-background-button-primary-active: #0F85E9;
+  --color-background-button-primary-disable: #0F85E9;
+  --color-background-button-secondary-hover: #FAFAFA;
+  --color-background-button-secondary-active: #F5F5F5;
+  --color-text-new-event-title-primary-default: #000000; /* form new event title color */
+  --color-text-calendar-date-primary-hover: #FFFFFF;
+  --color-text-calendar-date-primary-holiday: #5CB85C;
+  --color-text-calendar-date-primary-past: #CCCCCC;
+  --color-text-button-primary-default: #FFFFFF;
+  --color-text-button-secondary-default: #828282;
+  --color-text-input-primary-placeholder: #AAAAAA;
+  --color-text-input-primary-default: #191919;
+  --color-text-event-primary-default: #FF7733;
+  --color-text-event-primary-hover: #FFFFFF;
+  --color-text-event-primary-past: rgba(255,119,51,0.7);
+  --color-border-input-primary-default: rgba(0, 0, 0, 0.1);
+  --color-border-input-primary-active: #198CFF;
+  --color-border-input-primary-hover: #7FBFFE;
+  --color-border-calendar-cell-primary-default: #E8E8E8;
+  --color-font-primary: #828282;
+  --color-font-secondary: #191919;
+  --color-font-past: #CCCCCC;
+  --color-base-light: #fff;
+  --color-base-dark: #191919;
+  --font-base-font-family: Helvetica Neue;
+  --font-calendar-date-small-font-size: 14px;
+  --font-calendar-date-small-font-weight: 500;
+  --font-calendar-date-small-line-height: 20px;
+  --font-calendar-date-medium-font-size: 16px;
+  --font-calendar-date-medium-font-weight: 500;
+  --font-calendar-date-medium-line-height: 20px;
+  --font-calendar-date-large-font-size: 18px;
+  --font-calendar-date-large-font-weight: 500;
+  --font-calendar-date-large-line-height: 23px;
+  --font-event-medium-font-size: 10px;
+  --font-event-medium-font-weight: 700;
+  --font-event-medium-line-height: 12px;
+  --font-event-large-font-size: 12px;
+  --font-event-large-font-weight: 500;
+  --font-event-large-line-height: 18px;
+  --font-calendar-title-default-font-size: 24px;
+  --font-calendar-title-default-font-weight: 500;
+  --font-calendar-title-default-line-height: 28px;
+  --font-new-event-title-default-font-size: 18px;
+  --font-new-event-title-default-font-weight: 500;
+  --font-new-event-title-default-line-height: 22px;
+  --font-input-default-font-size: 14px;
+  --font-input-default-font-weight: 400;
+  --font-input-default-line-height: 21px;
+  --font-button-default-font-size: 14px;
+  --font-button-default-font-weight: 500;
+  --font-button-default-line-height: 18px;
+  --font-button-default-letter-spacing: 0.005em;
+  --radius-button: 6px;
+  --radius-event: 4px;
+  --radius-new-event: 8px;
+  --radius-input: 6px;
+  --radius-calendar-cell: 8px;
+  --radius-calendar-default: 25px;
+  --radius-calendar-mobile: 20px;
+  --size-base: 3px;
+  --size-base-x1: 3px;
+  --size-base-x2: 3px*2;
+  --size-base-x3: 3px*3;
+  --size-base-x4: 3px*4;
+  --size-base-x5: 3px*5;
+  --size-base-x6: 3px*6;
+  --size-base-x7: 3px*7;
+  --size-base-x8: 3px*8;
+  --size-base-x10: 3px*10;
+  --size-base-x11: 3px*11;
+  --size-base-x12: 3px*12;
+  --size-base-x13: 3px*13;
+  --size-base-x14: 3px*14;
+  --size-base-x15: 3px*15;
+  --size-base-x16: 3px*16;
+  --size-base-x17: 3px*18;
+  --size-base-x19: 3px*19;
+  --size-base-x20: 3px*20;
+}
