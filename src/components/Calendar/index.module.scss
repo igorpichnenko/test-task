@@ -42,6 +42,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    cursor: pointer;
 }
 
 .day:last-child {
@@ -126,7 +128,6 @@
 }
 
 .dayNumber {
-
     display: flex;
     align-items: center;
     justify-content: center;
