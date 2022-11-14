@@ -1,13 +1,14 @@
 import React from 'react';
 import { Calendar } from '../components/Calendar';
 import { eventsData } from '../mocks';
+import styles from "./index.module.scss"
 
 function TestPage() {
 
   return (
-    <div style={{ padding: "20px 5px" }}>
+    <section className={styles.testPage}>
       <Calendar eventsData={eventsData} />
-    </div>
+    </section>
   )
 }
 
