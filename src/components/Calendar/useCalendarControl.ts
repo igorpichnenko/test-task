@@ -42,10 +42,10 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
                 const oldEvent = events.find((el) => el.date === date)
 
                 const newEvent = {
-                    event: [{ subtitle, text }],
+                    event: [{ subtitle, text, id }],
                     date,
                     id
-                } as { event: { text: string, subtitle: string }[], date: string, id: number }
+                } as eventsData
 
                 if (oldEvent) {
                     events.map((el) => {
@@ -72,11 +72,30 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
         nextMonth: () => {
             setCalendarState({ ...calendarState, currentDate: calendarState.currentDate.add(1, 'month') })
         },
-        handleClickEvent: (events: { subtitle: string, text: string }[], date?: string, detailedEvent?: eventsData) => {
+        handleClickEvent: (id: number, date?: string, detailedEvent?: eventsData) => {
             setCurrentEvent(detailedEvent)
-            setEventPopup(!isEventPopup)
+            setEventPopup(true)
 
-            console.info("detailedEvent", detailedEvent, "events", events, "date", date)
+            const currentEvent = calendarState.eventsData.find((el) => el.date === date)?.event.find((el) => el.id === id)
+            console.info(currentEvent, "currentEvent")
+        },
+        handleDeleteEvent: (id: number, date: string) => {
+            const events = calendarState.eventsData
+            const indexArray = events.findIndex(el => el.date === date);
+
+            const oldEvent = events.find((el) => el.date === date)
+            if (oldEvent) {
+                const index = oldEvent?.event.findIndex(el => el.id === id);
+                if (index !== -1) {
+                    oldEvent?.event.splice(index, 1);
+                    if (indexArray !== -1) {
+                        events.splice(indexArray, 1);
+                    }
+                    events.splice(indexArray, 0, oldEvent)
+
+                    setCalendarState({ ...calendarState, eventsData: events })
+                }
+            }
         },
         handleClickCell: (calendarDays: CalendarDays[], date?: string) => {
             if (date) {

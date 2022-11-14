@@ -13,7 +13,7 @@ moment.locale("ru")
 
 export interface eventsData {
     id: number;
-    event: { text: string, subtitle: string }[];
+    event: { text: string, subtitle: string, id: number }[];
     date: string;
 }
 export interface CalendarProps {
@@ -27,7 +27,8 @@ const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
         nextMonth, handleClickEvent,
         handleClickCell, calendarDays,
         handleSubmit, currentCheckedDate,
-        currentEvent, isEventPopup, setEventPopup
+        currentEvent, isEventPopup,
+        setEventPopup, handleDeleteEvent
     } = useCalendarControl({ eventsData })
 
     return (
@@ -61,7 +62,7 @@ const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
                 </table>
             </div>
             <EventForm onSubmit={handleSubmit} currentCheckedDate={currentCheckedDate} />
-            <EventPopup isEventPopup={isEventPopup} setEventPopup={setEventPopup} currentEvent={currentEvent} />
+            <EventPopup isEventPopup={isEventPopup} handleDeleteEvent={handleDeleteEvent} setEventPopup={setEventPopup} currentEvent={currentEvent} />
         </section>
     );
 }
