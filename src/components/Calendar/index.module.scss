@@ -5,15 +5,25 @@
     border-radius: 25px;
 
     display: flex;
-    column-gap: 30px;
-    min-width: 1400px;
-    max-width: 1480px;
+    flex-direction: column;
+
+    padding-left: 30px;
+    padding-top: 30px;
+    padding-bottom: 81px;
+}
+
+.header {
+    display: flex;
+    position: relative;
+    flex-direction: column;
 }
 
 .calendar {
-    max-width: 1028px;
+    display: flex;
+    flex-direction: row;
     position: relative;
-    padding: 0 0 80px 30px;
+
+    column-gap: 30px;
 }
 
 .calendarBody {
@@ -26,8 +36,9 @@
 
     box-sizing: border-box;
     border: 1px solid var(--color-border-calendar-cell-primary-default);
-    width: 146.86px;
+
     height: 141px;
+    max-width: 146.86px;
 
     color: var(--color-font-primary);
 
@@ -59,8 +70,9 @@
     box-sizing: border-box;
     border: 1px solid var(--color-border-calendar-cell-primary-default);
     text-align: left;
-    width: 146.86px;
+
     height: 59px;
+    max-width: 146.86px;
 
     padding-top: var(--size-base-x6);
     padding-left: var(--size-base-x6);
@@ -89,14 +101,14 @@
     border-width: 0 2.5px 2.5px 0;
     border-radius: 2px;
     display: inline-block;
-    padding: 3px;
+    padding: 5px;
     width: 8px;
     height: 8px
 }
 
 
 .pagingButton:first-child {
-    left: 40px;
+    left: 10px;
 
     .icon {
         transform: rotate(135deg);
@@ -149,32 +161,28 @@
     margin-bottom: var(--size-base-x16);
 }
 
-@media(max-width: $desktopWidth1400) {
-    .wrapper {
-        flex-wrap: wrap;
-        min-width: none;
-        min-width: 0;
-        max-width: 1100px;
-    }
 
-    .calendar {
-        padding: 0 0 20px 30px;
-    }
-}
 
 @media(max-width: $desktopWidth1200) {
 
     .wrapper {
-        max-width: 768px;
+        padding-top: 20px;
+        padding-right: 30px;
+        padding-bottom: 28px;
+    }
+
+    .calendar {
+
+        flex-direction: column;
     }
 
     .day {
         @include MediumBaseFont();
 
-        width: 101.14px;
         height: 96px;
+        max-width: unset;
 
-        padding-top: var(--size-base-x5);
+        padding-top: var(--size-base-x3);
         padding-left: var(--size-base-x3);
         padding-bottom: var(--size-base-x1);
         padding-right: var(--size-base-x2);
@@ -183,8 +191,8 @@
     .dayHeader {
         @include MediumBaseFont();
 
-        width: 101.14px;
         height: 50px;
+        max-width: unset;
 
         padding-top: var(--size-base-x5);
         padding-left: var(--size-base-x5);
@@ -200,6 +208,7 @@
     }
 
     .icon {
+        padding: 4px;
         width: 6px;
         height: 6px
     }
@@ -220,10 +229,16 @@
 }
 
 @media(max-width: $mobileWidth) {
+
+    .wrapper {
+        padding-right: 16px;
+        padding-left: 16px;
+        padding-bottom: 109px;
+    }
+
     .day {
         @include SmallBaseFont();
 
-        width: 54.57px;
         height: 55px;
 
         align-items: center;
@@ -237,19 +252,10 @@
     .dayHeader {
         @include SmallBaseFont();
 
-        width: 54.57px;
         height: 38px;
 
         padding-top: var(--size-base-x3);
         padding-left: var(--size-base-x3);
-    }
-
-    .wrapper {
-        max-width: 420px;
-    }
-
-    .calendar {
-        padding: 0 0 30px 16px;
     }
 
     .title {
@@ -262,6 +268,7 @@
     }
 
     .icon {
+        padding: 3px;
         width: 4px;
         height: 4px
     }
@@ -278,19 +285,17 @@
         width: 26px;
         height: 26px;
     }
-
-    .pagingButton:first-child {
-        left: 25px;
-    }
 }
 
 @media(max-width: $smartWidth) {
+
     .wrapper {
-        max-width: 330px;
+        padding-right: 6px;
+        padding-left: 6px;
+        padding-bottom: 50px;
     }
 
     .day {
-        width: 44.57px;
         height: 45px;
 
         padding-top: var(--size-base-x1);
@@ -300,18 +305,11 @@
     }
 
     .dayHeader {
-        width: 44.57px;
         height: 28px;
 
         padding-top: var(--size-base-x1);
         padding-left: var(--size-base-x1);
     }
 
-    .calendar {
-        padding: 0 0 30px 3px;
-    }
 
-    .pagingButton:first-child {
-        left: 15px;
-    }
 }

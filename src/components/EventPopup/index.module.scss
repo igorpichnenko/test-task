@@ -1,17 +1,22 @@
 .popupContent {
-    padding: var(--size-base-x15);
+    padding: var(--size-base-x12);
     background-color: var(--color-background-body-primary);
     border-radius: var(--radius-calendar-cell);
     max-width: 1200px;
     max-height: 700px;
     display: flex;
     flex-direction: column;
+    gap: 5px;
 
     overflow: scroll;
 }
 
 .li {
     color: var(--color-text-calendar-date-primary-holiday);
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
 }
 
 .subtitle,
@@ -21,4 +26,5 @@
 
 .buttonWrapper {
     align-self: flex-end;
+    margin-bottom: 10px;
 }
