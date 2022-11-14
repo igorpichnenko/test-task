@@ -1,4 +1,4 @@
-## [Просмотр Storybook](https://igorpichnenko.github.io/storybook/?path=/story/alert--default)
+## [Просмотр Storybook](https://igorpichnenko.github.io/test-task)
 
 
 
