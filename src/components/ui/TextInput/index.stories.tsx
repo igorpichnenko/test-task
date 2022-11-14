@@ -13,5 +13,7 @@ const Template: Story<TextInputProps> = (args) => <TextInput {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  placeholder: 'Enter value',
-};
+  placeholder: 'Укажите краткое название',
+  required: true,
+  name: "subtitle",
+}

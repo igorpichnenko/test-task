@@ -7,7 +7,7 @@ export default create({
   colorPrimary: '#FF4785',
   colorSecondary: '#1EA7FD',
 
-// UI
+  // UI
   appBg: background.app,
   appContentBg: color.lightest,
   appBorderColor: color.border,

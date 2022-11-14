@@ -2,7 +2,7 @@ import React from 'react';
 import { CalendarProps, eventsData } from '../../Calendar';
 import { useMediaQuery } from 'react-responsive';
 import styles from './index.module.scss';
-export interface EventPropsTypes {
+export interface EventProps {
   date?: string;
   handleClickEvent: (id: number, date?: string, detailedEvent?: eventsData) => void;
   calendarState: CalendarProps,
@@ -15,7 +15,7 @@ export const Event = ({
   handleClickEvent = () => { },
   past,
   ...props
-}: EventPropsTypes) => {
+}: EventProps) => {
 
   const isTablet = useMediaQuery({ query: "(max-width: 991px)" });
   const detailedEvent = calendarState.eventsData.find((event) => event.date === date)

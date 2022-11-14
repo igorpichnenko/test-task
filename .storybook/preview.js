@@ -1,4 +1,5 @@
 import React from 'react';
+import "../src/assets/variables/scss/_variables.scss";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

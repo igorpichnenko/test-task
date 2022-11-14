@@ -20,7 +20,7 @@ export interface CalendarProps {
     eventsData: eventsData[]
 }
 
-const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
+export const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
 
     const {
         calendarState, prevMonth,
@@ -67,7 +67,6 @@ const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
     );
 }
 
-export default Calendar;
 
 
 

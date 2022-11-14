@@ -31,7 +31,6 @@
     font-size: var(--font-calendar-date-large-font-size);
     line-height: var(--font-calendar-date-large-line-height);
 
-
     color: var(--color-font-primary);
 
     padding-top: var(--size-base-x6);
@@ -164,7 +163,6 @@
     .calendar {
         padding: 0 0 20px 30px;
     }
-
 }
 
 @media(max-width: $desktopWidth1200) {
@@ -235,7 +233,6 @@
 
         align-items: center;
 
-
         font-weight: var(--font-calendar-date-small-font-weight);
         font-size: var(--font-calendar-date-small-font-size);
         line-height: var(--font-calendar-date-small-line-height);
@@ -259,7 +256,7 @@
     }
 
     .wrapper {
-        max-width: 414px;
+        max-width: 420px;
     }
 
     .calendar {
@@ -286,7 +283,6 @@
         line-height: var(--font-caption-small-line-height);
 
         margin-bottom: var(--size-base-x3);
-
     }
 
     .dayNumber {
