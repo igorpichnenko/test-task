@@ -1,3 +1,7 @@
+## [Просмотр Storybook](https://igorpichnenko.github.io/storybook/?path=/story/alert--default)
+
+
+
 # Basic Style Dictionary
 
 This example code is bare-bones to show you what this framework can do. If you have the style-dictionary module installed globally, you can `cd` into this directory and run:
