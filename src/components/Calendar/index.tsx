@@ -1,12 +1,13 @@
 import React from 'react';
 import moment from 'moment';
 import "moment/locale/ru"
-import styles from "./index.module.scss"
 import { daysOfTheWeek } from '../../mocks';
 import { useCalendarControl } from './useCalendarControl';
 import { Event } from '../ui/Event';
 import { EventForm } from '../EventForm';
 import { EventPopup } from '../EventPopup';
+
+import styles from "./index.module.scss"
 
 moment.locale("ru")
 

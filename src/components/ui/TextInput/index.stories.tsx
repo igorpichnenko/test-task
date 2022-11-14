@@ -2,14 +2,14 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { TextInputPropsTypes, TextInput } from './index';
+import { TextInputProps, TextInput } from './index';
 
 export default {
   title: 'UI components/TextInput',
   component: TextInput,
 } as Meta;
 
-const Template: Story<TextInputPropsTypes> = (args) => <TextInput {...args} />;
+const Template: Story<TextInputProps> = (args) => <TextInput {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

@@ -1,0 +1,22 @@
+.textArea {
+    box-sizing: border-box;
+    resize: none;
+    padding: 8px 10px;
+
+    width: 100%;
+    height: 85px;
+
+    background: var(--color-background-input-primary-default);
+    border: 1px solid var(--color-border-input-primary-default);
+    border-radius: var(--radius-input);
+
+    font-weight: var(--font-input-default-font-weight);
+    font-size: var(--font-input-default-font-size);
+    line-height: var(--font-input-default-line-height);
+
+    color: var(--color-text-input-primary-default);
+}
+
+.textArea::placeholder {
+    color: var(--color-text-input-primary-placeholder);
+}
