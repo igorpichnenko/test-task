@@ -289,4 +289,40 @@
         width: 26px;
         height: 26px;
     }
+
+    .pagingButton:first-child {
+        left: 25px;
+    }
+}
+
+@media(max-width: $smartWidth) {
+    .wrapper {
+        max-width: 330px;
+    }
+
+    .day {
+        width: 44.57px;
+        height: 45px;
+
+        padding-top: var(--size-base-x1);
+        padding-left: var(--size-base-x1);
+        padding-right: var(--size-base-x1);
+        padding-bottom: var(--size-base-x1);
+    }
+
+    .dayHeader {
+        width: 44.57px;
+        height: 28px;
+
+        padding-top: var(--size-base-x1);
+        padding-left: var(--size-base-x1);
+    }
+
+    .calendar {
+        padding: 0 0 30px 3px;
+    }
+
+    .pagingButton:first-child {
+        left: 15px;
+    }
 }

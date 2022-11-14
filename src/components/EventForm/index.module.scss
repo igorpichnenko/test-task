@@ -59,3 +59,10 @@
         margin-bottom: 89px;
     }
 }
+
+@media(max-width: $smartWidth) {
+    .form {
+        margin-left: 3px;
+        max-width: 274px;
+    }
+}

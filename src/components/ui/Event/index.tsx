@@ -17,7 +17,7 @@ export const Event = ({
   ...props
 }: EventProps) => {
 
-  const isTablet = useMediaQuery({ query: "(max-width: 991px)" });
+  const isTablet = useMediaQuery({ query: "(max-width: 1200px)" });
   const detailedEvent = calendarState.eventsData.find((event) => event.date === date)
   const events = detailedEvent?.event ?? []
 

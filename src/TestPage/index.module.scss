@@ -1,3 +1,11 @@
+@import "../assets//variables/scss/mixin.scss";
+
 .testPage {
   padding: 20px 5px;
+}
+
+@media(max-width: $desktopWidth1200) {
+  .testPage {
+    padding: 20px 0px;
+  }
 }
