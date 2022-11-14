@@ -1,0 +1,54 @@
+.button {
+    padding: var(--size-base-x3) var(--size-base-x6);
+
+    width: 100%;
+    height: 36px;
+
+    min-width: 103px;
+    max-width: 282px;
+
+    background: var(--color-background-button-primary-default);
+    border-radius: var(--radius-button);
+
+    font-weight: var(--font-button-default-font-weight);
+    font-size: var(--font-button-default-font-size);
+    line-height: var(--font-button-default-line-height);
+
+    letter-spacing: var(--font-button-default-letter-spacing);
+
+    color: var(--color-text-button-primary-default);
+
+    border: unset;
+
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: var(--color-background-button-primary-hover);
+}
+
+.button:active {
+    background-color: var(--color-background-button-primary-active);
+}
+
+.smallButton {
+    max-width: 103px;
+}
+
+.disabledButton {
+    background-color: var(--color-background-button-primary-disable);
+    opacity: 0.25;
+}
+
+.secondaryButton {
+    color: var(--color-text-button-secondary-default);
+    background-color: transparent;
+}
+
+.secondaryButton:active {
+    background-color: --color-background-button-secondary-active;
+}
+
+.secondaryButton:hover {
+    background-color: var(--color-background-button-secondary-hover);
+}

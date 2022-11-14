@@ -1,4 +1,5 @@
 import React from "react"
+import { Button } from "../ui/Button"
 import styles from "./index.module.scss"
 
 export interface EventFormProps {
@@ -14,7 +15,7 @@ export const EventForm: React.FC<EventFormProps> = ({ onSubmit, currentCheckedDa
             <input required className={styles.input} name="date" placeholder="ДД.ММ.ГГ" defaultValue={currentCheckedDate} />
             <input required className={styles.input} name="subtitle" placeholder="Укажите краткое название" />
             <textarea required className={styles.textArea} placeholder="Введите описание" name="text" />
-            <button className={styles.button} type="submit">Добавить</button>
+            <Button type="submit">Добавить</Button>
         </form>
     )
 }

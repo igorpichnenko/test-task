@@ -3,6 +3,8 @@
     background-color: var(--color-background-body-primary);
     border-radius: var(--radius-calendar-cell);
     max-width: 1200px;
+    display: flex;
+    flex-direction: column;
 }
 
 .li {
@@ -12,4 +14,8 @@
 .subtitle,
 .text {
     color: var(--color-text-button-secondary-default);
+}
+
+.buttonWrapper {
+    align-self: flex-end;
 }
