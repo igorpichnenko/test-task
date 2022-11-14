@@ -1,3 +1,5 @@
+@import "../../assets/variables/scss/mixin.scss";
+
 .form {
     display: flex;
     flex-direction: column;
@@ -20,4 +22,40 @@
     line-height: var(--font-new-event-title-default-line-height);
 
     color: var(--color-text-new-event-title-primary-default);
+}
+
+@media(max-width: $desktopWidth1400) {
+    .form {
+        margin-top: 0;
+        margin-left: 30px;
+        margin-bottom: 28px;
+
+        width: 100%;
+        max-width: 990px;
+    }
+
+    .buttonWrapper {
+        margin-left: auto;
+        min-width: 282px;
+    }
+
+}
+
+@media(max-width: $desktopWidth1200) {
+    .form {
+        max-width: 670px;
+    }
+
+    .buttonWrapper {
+        margin-left: auto;
+        min-width: 103px;
+    }
+}
+
+@media(max-width: $mobileWidth) {
+    .form {
+        max-width: 342px;
+        margin-left: 16px;
+        margin-bottom: 89px;
+    }
 }

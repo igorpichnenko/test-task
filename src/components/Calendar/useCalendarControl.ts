@@ -92,9 +92,11 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
                         events.splice(indexArray, 1);
                     }
                     events.splice(indexArray, 0, oldEvent)
-
                     setCalendarState({ ...calendarState, eventsData: events })
-                    setEventPopup(false)
+
+                    if (!oldEvent?.event.length) {
+                        setEventPopup(false)
+                    }
                 }
             }
         },

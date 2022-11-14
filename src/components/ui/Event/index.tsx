@@ -1,5 +1,6 @@
 import React from 'react';
 import { CalendarProps, eventsData } from '../../Calendar';
+import { useMediaQuery } from 'react-responsive';
 import styles from './index.module.scss';
 export interface EventPropsTypes {
   date?: string;
@@ -16,7 +17,7 @@ export const Event = ({
   ...props
 }: EventPropsTypes) => {
 
-
+  const isTablet = useMediaQuery({ query: "(max-width: 991px)" });
   const detailedEvent = calendarState.eventsData.find((event) => event.date === date)
   const events = detailedEvent?.event ?? []
 
@@ -26,10 +27,12 @@ export const Event = ({
     <span className={styles.eventsWrapper}>
       {events.map((el, i) => {
         let event = el
-        if (el.subtitle.length >= 16) {
-          event = { ...event, subtitle: `${el.subtitle.slice(0, 16)}...` }
+        if (!isTablet && el.subtitle.length >= 19) {
+          event = { ...event, subtitle: `${el.subtitle.slice(0, 19)}...` }
+        } else if (el.subtitle.length >= 13) {
+          event = { ...event, subtitle: `${el.subtitle.slice(0, 13)}...` }
         }
-        return <span onClick={() => handleClickEvent(event.id, date, detailedEvent,)} key={`${el}${i}`} style={{ opacity: `${past && 0.5}` }} className={styles.event} {...props}>{event.subtitle}</span>
+        return <span onClick={() => handleClickEvent(event.id, date, detailedEvent,)} key={el.id} style={{ opacity: `${past && 0.5}` }} className={styles.event} {...props}>{event.subtitle}</span>
       })}
 
     </span>

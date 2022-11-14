@@ -1,7 +1,10 @@
+@import "../../../assets/variables/scss/mixin.scss";
+
 .eventsWrapper {
   display: inline-flex;
   flex-direction: column;
   row-gap: 5px;
+  margin-bottom: 8px;
 }
 
 .event {
@@ -19,4 +22,37 @@
 .event:hover {
   color: var(--color-text-event-primary-hover);
   background: var(--color-background-event-primary-hover);
+}
+
+@media(max-width: $desktopWidth1200) {
+  .event {
+
+    font-weight: var(--font-event-medium-font-weight);
+    font-size: var(--font-event-medium-font-size);
+    line-height: var(--font-event-medium-line-height);
+  }
+
+  .eventsWrapper {
+    margin-bottom: 6px;
+  }
+}
+
+@media(max-width: $mobileWidth) {
+  .event {
+    padding: 4px 4px;
+    background-color: var(--color-text-event-primary-default);
+    border-radius: 10px;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+  }
+
+  .eventsWrapper {
+    flex-direction: row;
+    row-gap: 0;
+    column-gap: 3px;
+    margin-bottom: 0px;
+  }
+
 }

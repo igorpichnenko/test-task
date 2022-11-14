@@ -17,7 +17,9 @@ export const EventForm: React.FC<EventFormProps> = ({ onSubmit, currentCheckedDa
             <TextInput required name="date" placeholder="ДД.ММ.ГГ" defaultValue={currentCheckedDate} />
             <TextInput required name="subtitle" placeholder="Укажите краткое название" />
             <TextArea required placeholder="Введите описание" name="text" />
-            <Button type="submit">Добавить</Button>
+            <div className={styles.buttonWrapper}>
+                <Button type="submit">Добавить</Button>
+            </div>
         </form>
     )
 }

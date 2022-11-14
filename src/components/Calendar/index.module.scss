@@ -1,5 +1,7 @@
+@import "../../assets/variables/scss/mixin.scss";
+
 .wrapper {
-    background: #FFFFFF;
+    background: var(--color-background-body-primary);
     border-radius: 25px;
 
     display: flex;
@@ -117,8 +119,9 @@
 
 
 .caption {
-    font-size: var(--font-calendar-title-default-font-size);
-    line-height: var(--font-calendar-title-default-line-height);
+    font-size: var(--font-caption-large-font-size);
+    font-weight: var(--font-caption-large-font-weight);
+    line-height: var(--font-caption-large-line-height);
     color: var(--color-font-secondary);
 
     margin-bottom: var(--size-base-x10);
@@ -148,4 +151,146 @@
     color: var(--color-font-secondary);
 
     margin-bottom: var(--size-base-x16);
+}
+
+@media(max-width: $desktopWidth1400) {
+    .wrapper {
+        flex-wrap: wrap;
+        min-width: none;
+        min-width: 0;
+        max-width: 1100px;
+    }
+
+    .calendar {
+        padding: 0 0 20px 30px;
+    }
+
+}
+
+@media(max-width: $desktopWidth1200) {
+
+    .wrapper {
+        max-width: 768px;
+    }
+
+    .day {
+        width: 101.14px;
+        height: 96px;
+
+        font-weight: var(--font-calendar-date-medium-font-weight);
+        font-size: var(--font-calendar-date-medium-font-size);
+        line-height: var(--font-calendar-date-medium-line-height);
+
+        padding-top: var(--size-base-x5);
+        padding-left: var(--size-base-x3);
+        padding-bottom: var(--size-base-x1);
+        padding-right: var(--size-base-x2);
+    }
+
+    .dayHeader {
+        width: 101.14px;
+        height: 50px;
+
+        font-weight: var(--font-calendar-date-medium-font-weight);
+        font-size: var(--font-calendar-date-medium-font-size);
+        line-height: var(--font-calendar-date-medium-line-height);
+
+        padding-top: var(--size-base-x5);
+        padding-left: var(--size-base-x5);
+    }
+
+    .title {
+        font-weight: var(--font-calendar-title-default-font-weight);
+        font-size: var(--font-calendar-title-default-font-size);
+        line-height: var(--font-calendar-title-default-line-height);
+        letter-spacing: var(--font-calendar-title-secondary-letter-spacing);
+
+        margin-bottom: var(--size-base-x12);
+    }
+
+    .icon {
+        width: 6px;
+        height: 6px
+    }
+
+    .caption {
+        font-size: var(--font-caption-default-font-size);
+        font-weight: var(--font-caption-default-font-weight);
+        line-height: var(--font-caption-default-line-height);
+
+        margin-bottom: var(--size-base-x6);
+
+    }
+
+    .dayNumber {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media(max-width: $mobileWidth) {
+    .day {
+        width: 54.57px;
+        height: 55px;
+
+        align-items: center;
+
+
+        font-weight: var(--font-calendar-date-small-font-weight);
+        font-size: var(--font-calendar-date-small-font-size);
+        line-height: var(--font-calendar-date-small-line-height);
+
+        padding-top: var(--size-base-x1);
+        padding-left: var(--size-base-x4);
+        padding-right: var(--size-base-x2);
+        padding-bottom: var(--size-base-x2);
+    }
+
+    .dayHeader {
+        width: 54.57px;
+        height: 38px;
+
+        font-weight: var(--font-calendar-date-small-font-weight);
+        font-size: var(--font-calendar-date-small-font-size);
+        line-height: var(--font-calendar-date-small-line-height);
+
+        padding-top: var(--size-base-x3);
+        padding-left: var(--size-base-x3);
+    }
+
+    .wrapper {
+        max-width: 414px;
+    }
+
+    .calendar {
+        padding: 0 0 30px 16px;
+    }
+
+    .title {
+        font-weight: var(--font-calendar-title-small-font-weight);
+        font-size: var(--font-calendar-title-small-font-size);
+        line-height: var(--font-calendar-title-small-line-height);
+        letter-spacing: var(--font-calendar-title-secondary-letter-spacing);
+
+        margin-bottom: var(--size-base-x13);
+    }
+
+    .icon {
+        width: 4px;
+        height: 4px
+    }
+
+    .caption {
+        font-size: var(--font-caption-small-font-size);
+        font-weight: var(--font-caption-small-font-weight);
+        line-height: var(--font-caption-small-line-height);
+
+        margin-bottom: var(--size-base-x3);
+
+    }
+
+    .dayNumber {
+        width: 26px;
+        height: 26px;
+    }
 }
