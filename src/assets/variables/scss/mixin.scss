@@ -5,3 +5,22 @@ $tabletWidth: 991px;
 /* storybook resize */
 $mobileWidth: 769px;
 $smartWidth: 413px;
+
+@mixin largeBaseFont() {
+    font-weight: var(--font-calendar-date-large-font-weight);
+    font-size: var(--font-calendar-date-large-font-size);
+    line-height: var(--font-calendar-date-large-line-height);
+}
+
+@mixin MediumBaseFont() {
+
+    font-weight: var(--font-calendar-date-medium-font-weight);
+    font-size: var(--font-calendar-date-medium-font-size);
+    line-height: var(--font-calendar-date-medium-line-height);
+}
+
+@mixin SmallBaseFont() {
+    font-weight: var(--font-calendar-date-small-font-weight);
+    font-size: var(--font-calendar-date-small-font-size);
+    line-height: var(--font-calendar-date-small-line-height);
+}

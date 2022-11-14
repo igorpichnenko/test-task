@@ -22,14 +22,12 @@
 }
 
 .day {
+    @include largeBaseFont();
+
     box-sizing: border-box;
     border: 1px solid var(--color-border-calendar-cell-primary-default);
     width: 146.86px;
     height: 141px;
-
-    font-weight: var(--font-calendar-date-large-font-weight);
-    font-size: var(--font-calendar-date-large-font-size);
-    line-height: var(--font-calendar-date-large-line-height);
 
     color: var(--color-font-primary);
 
@@ -56,14 +54,13 @@
 }
 
 .dayHeader {
+    @include largeBaseFont();
+
     box-sizing: border-box;
     border: 1px solid var(--color-border-calendar-cell-primary-default);
     text-align: left;
     width: 146.86px;
     height: 59px;
-    font-weight: var(--font-calendar-date-large-font-weight);
-    font-size: var(--font-calendar-date-large-font-size);
-    line-height: var(--font-calendar-date-large-line-height);
 
     padding-top: var(--size-base-x6);
     padding-left: var(--size-base-x6);
@@ -172,12 +169,10 @@
     }
 
     .day {
+        @include MediumBaseFont();
+
         width: 101.14px;
         height: 96px;
-
-        font-weight: var(--font-calendar-date-medium-font-weight);
-        font-size: var(--font-calendar-date-medium-font-size);
-        line-height: var(--font-calendar-date-medium-line-height);
 
         padding-top: var(--size-base-x5);
         padding-left: var(--size-base-x3);
@@ -186,12 +181,10 @@
     }
 
     .dayHeader {
+        @include MediumBaseFont();
+
         width: 101.14px;
         height: 50px;
-
-        font-weight: var(--font-calendar-date-medium-font-weight);
-        font-size: var(--font-calendar-date-medium-font-size);
-        line-height: var(--font-calendar-date-medium-line-height);
 
         padding-top: var(--size-base-x5);
         padding-left: var(--size-base-x5);
@@ -228,14 +221,12 @@
 
 @media(max-width: $mobileWidth) {
     .day {
+        @include SmallBaseFont();
+
         width: 54.57px;
         height: 55px;
 
         align-items: center;
-
-        font-weight: var(--font-calendar-date-small-font-weight);
-        font-size: var(--font-calendar-date-small-font-size);
-        line-height: var(--font-calendar-date-small-line-height);
 
         padding-top: var(--size-base-x1);
         padding-left: var(--size-base-x4);
@@ -244,12 +235,10 @@
     }
 
     .dayHeader {
+        @include SmallBaseFont();
+
         width: 54.57px;
         height: 38px;
-
-        font-weight: var(--font-calendar-date-small-font-weight);
-        font-size: var(--font-calendar-date-small-font-size);
-        line-height: var(--font-calendar-date-small-line-height);
 
         padding-top: var(--size-base-x3);
         padding-left: var(--size-base-x3);
