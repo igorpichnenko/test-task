@@ -1,0 +1,15 @@
+.popupContent {
+    padding: var(--size-base-x15);
+    background-color: var(--color-background-body-primary);
+    border-radius: var(--radius-calendar-cell);
+    max-width: 1200px;
+}
+
+.li {
+    color: var(--color-text-calendar-date-primary-holiday);
+}
+
+.subtitle,
+.text {
+    color: var(--color-text-button-secondary-default);
+}

@@ -6,6 +6,7 @@ import { daysOfTheWeek } from '../../mocks';
 import { useCalendarControl } from './useCalendarControl';
 import { Event } from '../ui/Event';
 import { EventForm } from '../EventForm';
+import { EventPopup } from '../EventPopup';
 
 moment.locale("ru")
 
@@ -24,7 +25,8 @@ const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
         calendarState, prevMonth,
         nextMonth, handleClickEvent,
         handleClickCell, calendarDays,
-        handleSubmit, currentCheckedDate
+        handleSubmit, currentCheckedDate,
+        currentEvent, isEventPopup, setEventPopup
     } = useCalendarControl({ eventsData })
 
     return (
@@ -58,8 +60,12 @@ const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
                 </table>
             </div>
             <EventForm onSubmit={handleSubmit} currentCheckedDate={currentCheckedDate} />
+            <EventPopup isEventPopup={isEventPopup} setEventPopup={setEventPopup} currentEvent={currentEvent} />
         </section>
     );
 }
 
 export default Calendar;
+
+
+

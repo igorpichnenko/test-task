@@ -4,7 +4,7 @@ export const eventsData =
         { id: 7, event: [{ subtitle: "Long name of the", text: "описание" }], date: "17/10/22", text: "описание" },
         { id: 8, event: [{ subtitle: "Long name of the", text: "описание" }], date: "03/11/22", text: "описание" },
         { id: 9, event: [{ subtitle: "Long name of the", text: "описание" }, { subtitle: "Long name of the", text: "описание" }], date: "14/11/22", text: "описание" },
-        { id: 10, event: [{ subtitle: "Long name of the", text: "описание" }], date: "17/11/22", text: "описание" },
+        { id: 10, event: [{ subtitle: "Long name of the", text: "описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание описание" }], date: "17/11/22", text: "описание" },
         { id: 11, event: [{ subtitle: "Long name of the", text: "описание" }], date: "03/12/22", text: "описание" },
     ]
 

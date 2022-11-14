@@ -20,6 +20,8 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
     const [calendarState, setCalendarState] = useState({ currentDate: moment(), eventsData })
     const [calendarDays, setCalendarDays] = useState<CalendarDays[]>()
     const [currentCheckedDate, setCurrentCheckedDate] = useState("")
+    const [currentEvent, setCurrentEvent] = useState<eventsData>()
+    const [isEventPopup, setEventPopup] = useState(false)
 
     useEffect(() => {
         const calendarDays = createDaysOfMonth(calendarState.currentDate)
@@ -31,7 +33,6 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
             e.preventDefault()
 
             const events = calendarState.eventsData
-
             const date = e.currentTarget.date.value
             const subtitle = e.currentTarget.subtitle.value
             const id = Math.random()
@@ -72,7 +73,10 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
             setCalendarState({ ...calendarState, currentDate: calendarState.currentDate.add(1, 'month') })
         },
         handleClickEvent: (events: { subtitle: string, text: string }[], date?: string, detailedEvent?: eventsData) => {
-            console.log("detailedEvent", detailedEvent, "events", events, "date", date)
+            setCurrentEvent(detailedEvent)
+            setEventPopup(!isEventPopup)
+
+            console.info("detailedEvent", detailedEvent, "events", events, "date", date)
         },
         handleClickCell: (calendarDays: CalendarDays[], date?: string) => {
             if (date) {
@@ -101,10 +105,12 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
 
             setCalendarDays([...calendarDays])
         },
-
         calendarState,
         setCalendarState,
         calendarDays,
-        currentCheckedDate
+        currentCheckedDate,
+        currentEvent,
+        isEventPopup,
+        setEventPopup
     }
 }
