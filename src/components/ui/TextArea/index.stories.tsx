@@ -2,14 +2,14 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { TextAreaProps, TextArea } from './index';
+import { TextAreaPropsType, TextArea } from './index';
 
 export default {
   title: 'UI components/TextArea',
   component: TextArea,
 } as Meta;
 
-const Template: Story<TextAreaProps> = (args) => <TextArea {...args} />;
+const Template: Story<TextAreaPropsType> = (args) => <TextArea {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

@@ -11,16 +11,22 @@ import styles from "./index.module.scss"
 
 moment.locale("ru")
 
-export interface eventsData {
-    id: number;
-    event: { text: string, subtitle: string, id: number }[];
-    date: string;
-}
-export interface CalendarProps {
-    eventsData: eventsData[]
+export interface EventType {
+    text: string;
+    subtitle: string;
+    id: number
 }
 
-export const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
+export interface EventsDataType {
+    id: number;
+    event: EventType[];
+    date: string;
+}
+export interface CalendarPropsType {
+    eventsData: EventsDataType[]
+}
+
+export const Calendar: React.FC<CalendarPropsType> = ({ eventsData }) => {
 
     const {
         calendarState, prevMonth,
@@ -55,7 +61,8 @@ export const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
                                         key={date}
                                         className={styles.day} onClick={() => handleClickCell(calendarDays, date)}>
                                         <span className={styles.dayNumber} style={{ backgroundColor, opacity, color }}>{value}</span>
-                                        <Event past={past} handleClickEvent={handleClickEvent} date={date} calendarState={calendarState} />
+                                        <Event past={past} handleClickEvent={handleClickEvent}
+                                            date={date} eventsData={calendarState.eventsData} />
                                     </td>
                                 ))}
                             </tr>
@@ -65,7 +72,9 @@ export const Calendar: React.FC<CalendarProps> = ({ eventsData }) => {
                 <EventForm onSubmit={handleSubmit} currentCheckedDate={currentCheckedDate} />
             </div>
 
-            <EventPopup isEventPopup={isEventPopup} handleDeleteEvent={handleDeleteEvent} setEventPopup={setEventPopup} currentEvent={currentEvent} />
+            {currentEvent && currentEvent.event.length > 0 &&
+                <EventPopup isEventPopup={isEventPopup} handleDeleteEvent={handleDeleteEvent}
+                    setEventPopup={setEventPopup} currentEvent={currentEvent} />}
         </section>
     );
 }

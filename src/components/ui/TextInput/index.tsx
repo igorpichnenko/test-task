@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './index.module.scss';
 
-export interface TextInputProps {
+export interface TextInputPropsType {
   placeholder?: string;
   disabled?: boolean;
   required?: boolean;
@@ -9,7 +9,7 @@ export interface TextInputProps {
   defaultValue?: string;
 }
 
-export const TextInput: React.FC<TextInputProps> = ({
+export const TextInput: React.FC<TextInputPropsType> = ({
   placeholder,
   disabled,
   required,

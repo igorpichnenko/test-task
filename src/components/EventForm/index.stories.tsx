@@ -2,14 +2,14 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { EventFormProps, EventForm } from './index';
+import { EventFormPropsType, EventForm } from './index';
 
 export default {
   title: 'UI components/EventForm',
   component: EventForm,
 } as Meta;
 
-const Template: Story<EventFormProps> = (args) => <EventForm {...args} />;
+const Template: Story<EventFormPropsType> = (args) => <EventForm {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

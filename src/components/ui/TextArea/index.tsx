@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './index.module.scss';
 
-export interface TextAreaProps {
+export interface TextAreaPropsType {
     placeholder?: string;
     disabled?: boolean;
     required?: boolean;
@@ -9,7 +9,7 @@ export interface TextAreaProps {
     defaultValue?: string;
 }
 
-export const TextArea: React.FC<TextAreaProps> = ({
+export const TextArea: React.FC<TextAreaPropsType> = ({
     placeholder,
     disabled,
     required,

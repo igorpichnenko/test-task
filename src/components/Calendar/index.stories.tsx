@@ -2,7 +2,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { CalendarProps, Calendar } from './index';
+import { CalendarPropsType, Calendar } from './index';
 import { eventsData } from '../../mocks';
 
 export default {
@@ -10,7 +10,7 @@ export default {
   component: Calendar,
 } as Meta;
 
-const Template: Story<CalendarProps> = (args) => <Calendar {...args} />;
+const Template: Story<CalendarPropsType> = (args) => <Calendar {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

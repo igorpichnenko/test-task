@@ -1,40 +1,38 @@
 import React from 'react';
-import { CalendarProps, eventsData } from '../../Calendar';
+import { EventsDataType } from '../../Calendar';
 import { useMediaQuery } from 'react-responsive';
 import styles from './index.module.scss';
-export interface EventProps {
-  date?: string;
-  handleClickEvent: (id: number, date?: string, detailedEvent?: eventsData) => void;
-  calendarState: CalendarProps,
+import { spliceEvent } from '../../../utils';
+export interface EventPropsType {
+  date: string;
+  handleClickEvent: (id: number, currentEvents?: EventsDataType) => void;
+  eventsData: EventsDataType[],
   past?: boolean;
 }
 
 export const Event = ({
   date,
-  calendarState,
+  eventsData,
   handleClickEvent = () => { },
   past,
   ...props
-}: EventProps) => {
+}: EventPropsType) => {
 
-  const isTablet = useMediaQuery({ query: "(max-width: 1200px)" });
-  const detailedEvent = calendarState.eventsData.find((event) => event.date === date)
-  const events = detailedEvent?.event ?? []
+  const isDesktopWidth1200 = useMediaQuery({ query: "(max-width: 1200px)" });
+  const currentEvents = eventsData.find((event) => event.date === date)
+  const events = currentEvents?.event ?? []
 
   if (!events || !events.length) return null
 
   return (
     <span className={styles.eventsWrapper}>
-      {events.map((el, i) => {
-        let event = el
-        if (!isTablet && el.subtitle.length >= 19) {
-          event = { ...event, subtitle: `${el.subtitle.slice(0, 19)}...` }
-        } else if (el.subtitle.length >= 13) {
-          event = { ...event, subtitle: `${el.subtitle.slice(0, 13)}...` }
-        }
-        return <span onClick={() => handleClickEvent(event.id, date, detailedEvent,)} key={el.id} style={{ opacity: `${past && 0.5}` }} className={styles.event} {...props}>{event.subtitle}</span>
-      })}
+      {events.map((el) => {
+        const event = spliceEvent(el, isDesktopWidth1200)
 
+        return <span onClick={() => handleClickEvent(event.id, currentEvents,)}
+          key={el.id} style={{ opacity: `${past && 0.5}` }}
+          className={styles.event} {...props}>{event.subtitle}</span>
+      })}
     </span>
   );
 };

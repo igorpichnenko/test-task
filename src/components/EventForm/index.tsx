@@ -4,12 +4,12 @@ import { TextArea } from "../ui/TextArea"
 import { TextInput } from "../ui/TextInput"
 import styles from "./index.module.scss"
 
-export interface EventFormProps {
+export interface EventFormPropsType {
     onSubmit: (e: React.FormEvent<HTMLFormElement>) => void
     currentCheckedDate: string
 }
 
-export const EventForm: React.FC<EventFormProps> = ({ onSubmit, currentCheckedDate }) => {
+export const EventForm: React.FC<EventFormPropsType> = ({ onSubmit, currentCheckedDate }) => {
 
     return (
         <form onSubmit={onSubmit} className={styles.form}>

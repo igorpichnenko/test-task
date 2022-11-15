@@ -2,14 +2,14 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { EventPopupProps, EventPopup } from './index';
+import { EventPopupPropsType, EventPopup } from './index';
 
 export default {
   title: 'UI components/EventPopup',
   component: EventPopup,
 } as Meta;
 
-const Template: Story<EventPopupProps> = (args) => <EventPopup {...args} />;
+const Template: Story<EventPopupPropsType> = (args) => <EventPopup {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

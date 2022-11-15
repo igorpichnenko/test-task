@@ -1,26 +1,26 @@
 import moment from "moment"
 import { useEffect, useState } from "react"
-import { CalendarProps, eventsData } from "."
+import { CalendarPropsType, EventsDataType } from "."
 import { createDaysOfMonth } from "../../utils";
 
-export interface CalendarDays {
-    value?: number;
+export interface CalendarDaysType {
+    value: number;
+    id: number;
+    date: string;
     past?: boolean;
     color?: string;
-    id?: number;
-    date?: string;
     backgroundColor?: string;
     opacity?: string;
     event?: string[];
     holiday?: boolean
 }
 
-export const useCalendarControl = ({ eventsData }: CalendarProps) => {
+export const useCalendarControl = ({ eventsData }: CalendarPropsType) => {
 
     const [calendarState, setCalendarState] = useState({ currentDate: moment(), eventsData })
-    const [calendarDays, setCalendarDays] = useState<CalendarDays[]>()
+    const [calendarDays, setCalendarDays] = useState<CalendarDaysType[]>()
     const [currentCheckedDate, setCurrentCheckedDate] = useState("")
-    const [currentEvent, setCurrentEvent] = useState<eventsData>()
+    const [currentEvent, setCurrentEvent] = useState<EventsDataType>()
     const [isEventPopup, setEventPopup] = useState(false)
 
     useEffect(() => {
@@ -45,7 +45,7 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
                     event: [{ subtitle, text, id }],
                     date,
                     id
-                } as eventsData
+                }
 
                 if (oldEvent) {
                     events.map((el) => {
@@ -72,11 +72,11 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
         nextMonth: () => {
             setCalendarState({ ...calendarState, currentDate: calendarState.currentDate.add(1, 'month') })
         },
-        handleClickEvent: (id: number, date?: string, detailedEvent?: eventsData) => {
-            setCurrentEvent(detailedEvent)
+        handleClickEvent: (id: number, currentEvents?: EventsDataType) => {
+            setCurrentEvent(currentEvents)
             setEventPopup(true)
 
-            const currentEvent = calendarState.eventsData.find((el) => el.date === date)?.event.find((el) => el.id === id)
+            const currentEvent = currentEvents?.event.find((el) => el.id === id)
             console.info(currentEvent, "currentEvent")
         },
         handleDeleteEvent: (id: number, date: string) => {
@@ -100,32 +100,37 @@ export const useCalendarControl = ({ eventsData }: CalendarProps) => {
                 }
             }
         },
-        handleClickCell: (calendarDays: CalendarDays[], date?: string) => {
+        handleClickCell: (calendarDays: CalendarDaysType[], date: string) => {
             if (date) {
                 setCurrentCheckedDate(date)
             }
             const activeEvent = calendarDays.find((el) => el.date === date)
+            if (activeEvent) {
+                calendarDays.forEach((el) => {
+                    el.backgroundColor = ""
+                    let color = ""
 
-            calendarDays.forEach((el) => {
-                el.backgroundColor = ""
-                let color = ""
+                    if (el.holiday) {
+                        color = "var(--color-text-calendar-date-primary-holiday)"
+                    }
+                    else if (el.past) {
+                        color = "var(--color-text-calendar-date-primary-past)"
+                    }
+                    el.color = color
+                })
+                const index = calendarDays.findIndex(el => el.date === date);
 
-                if (el.holiday) {
-                    color = "var(--color-text-calendar-date-primary-holiday)"
+                if (index !== -1) {
+                    calendarDays.splice(index, 1);
                 }
-                else if (el.past) {
-                    color = "var(--color-text-calendar-date-primary-past)"
-                }
-                el.color = color
-            })
-            const index = calendarDays.findIndex(el => el.date === date);
+                calendarDays.splice(index, 0, {
+                    ...activeEvent, backgroundColor: "var(--color-background-calendar-date-primary-hover)",
+                    color: "var(--color-background-body-primary)"
+                })
 
-            if (index !== -1) {
-                calendarDays.splice(index, 1);
+                setCalendarDays([...calendarDays])
             }
-            calendarDays.splice(index, 0, { ...activeEvent, backgroundColor: "var(--color-background-calendar-date-primary-hover)", color: "var(--color-background-body-primary)" })
 
-            setCalendarDays([...calendarDays])
         },
         calendarState,
         setCalendarState,

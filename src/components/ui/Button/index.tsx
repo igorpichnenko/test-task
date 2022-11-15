@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./index.module.scss"
 
-export interface ButtonProps {
+export interface ButtonPropsType {
     onClick?: () => void;
     children: string | JSX.Element;
     small?: boolean;
@@ -10,7 +10,7 @@ export interface ButtonProps {
     type?: "button" | "submit" | "reset"
 }
 
-export const Button: React.FC<ButtonProps> = ({ small, children, disabled, secondary, type, ...props }) => {
+export const Button: React.FC<ButtonPropsType> = ({ small, children, disabled, secondary, type, ...props }) => {
     return (
         <button type={type} disabled={disabled} className={`${styles.button}
          ${small && styles.smallButton}
