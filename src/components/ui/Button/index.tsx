@@ -1,22 +1,36 @@
-import React from "react"
-import styles from "./index.module.scss"
+import React from 'react';
+import styles from './index.module.scss';
 
 export interface ButtonPropsType {
-    onClick?: () => void;
-    children: string | JSX.Element;
-    small?: boolean;
-    disabled?: boolean;
-    secondary?: boolean;
-    type?: "button" | "submit" | "reset"
+  onClick?: () => void;
+  children: string | JSX.Element;
+  small?: boolean;
+  disabled?: boolean;
+  secondary?: boolean;
+  type?: 'submit' | 'reset' | 'button' | undefined;
 }
 
-export const Button: React.FC<ButtonPropsType> = ({ small, children, disabled, secondary, type, ...props }) => {
-    return (
-        <button type={type} disabled={disabled} className={`${styles.button}
+export const Button: React.FC<ButtonPropsType> = ({
+  small,
+  children,
+  disabled,
+  secondary,
+  type = 'submit',
+  onClick,
+}) => {
+  return (
+    <button
+      // eslint-disable-next-line react/button-has-type
+      type={type}
+      disabled={disabled}
+      className={`${styles.button}
          ${small && styles.smallButton}
          ${disabled && styles.disabledButton}
          ${secondary && styles.secondaryButton}
          `}
-            {...props}>{children}</button>
-    )
-}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+};

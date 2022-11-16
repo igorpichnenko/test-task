@@ -13,13 +13,20 @@ const Template: Story<EventPropsType> = (args) => <Event {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  date: "11/11/2022",
-  handleClickEvent: () => { },
+  date: '11/11/2022',
+  handleClickEvent: () => {},
   past: false,
-  eventsData:
-    [{
+  eventsData: [
+    {
       id: 7,
-      event: [{ text: "long text lorem ipsum long text lorem ipsum long text lorem ipsum", subtitle: "long text lorem ipsum long text lorem ipsum", id: 7 }],
-      date: "11/11/2022"
-    }],
+      event: [
+        {
+          text: 'long text lorem ipsum long text lorem ipsum long text lorem ipsum',
+          subtitle: 'long text lorem ipsum long text lorem ipsum',
+          id: 7,
+        },
+      ],
+      date: '11/11/2022',
+    },
+  ],
 };

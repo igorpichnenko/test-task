@@ -15,9 +15,7 @@ export const TextInput: React.FC<TextInputPropsType> = ({
   required,
   name,
   defaultValue,
-  ...props
 }) => {
-
   return (
     <input
       required={required}
@@ -27,8 +25,6 @@ export const TextInput: React.FC<TextInputPropsType> = ({
       disabled={disabled}
       name={name}
       defaultValue={defaultValue}
-      {...props}
     />
   );
 };
-

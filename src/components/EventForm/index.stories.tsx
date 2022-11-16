@@ -13,6 +13,6 @@ const Template: Story<EventFormPropsType> = (args) => <EventForm {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  onSubmit: () => { },
-  currentCheckedDate: "11/11/2022"
+  onSubmit: () => {},
+  currentCheckedDate: '11/11/2022',
 };

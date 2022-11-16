@@ -14,6 +14,6 @@ const Template: Story<TextAreaPropsType> = (args) => <TextArea {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   required: true,
-  placeholder: "Введите описание",
-  name: "text"
+  placeholder: 'Введите описание',
+  name: 'text',
 };

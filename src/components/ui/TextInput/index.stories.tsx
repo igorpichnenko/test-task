@@ -15,5 +15,5 @@ export const Default = Template.bind({});
 Default.args = {
   placeholder: 'Укажите краткое название',
   required: true,
-  name: "subtitle",
-}
+  name: 'subtitle',
+};

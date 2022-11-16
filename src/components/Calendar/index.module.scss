@@ -39,6 +39,7 @@
 
     height: 141px;
     max-width: 146.86px;
+    min-width: 130px;
 
     color: var(--color-font-primary);
 
@@ -73,6 +74,7 @@
 
     height: 59px;
     max-width: 146.86px;
+    min-width: 130px;
 
     padding-top: var(--size-base-x6);
     padding-left: var(--size-base-x6);
@@ -181,6 +183,7 @@
 
         height: 96px;
         max-width: unset;
+        min-width: unset;
 
         padding-top: var(--size-base-x3);
         padding-left: var(--size-base-x3);
@@ -193,6 +196,7 @@
 
         height: 50px;
         max-width: unset;
+        min-width: unset;
 
         padding-top: var(--size-base-x5);
         padding-left: var(--size-base-x5);

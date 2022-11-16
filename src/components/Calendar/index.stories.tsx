@@ -2,8 +2,9 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 
-import { CalendarPropsType, Calendar } from './index';
+import Calendar from './index';
 import { eventsData } from '../../mocks';
+import { CalendarPropsType } from './type';
 
 export default {
   title: 'UI components/Calendar',
@@ -14,6 +15,5 @@ const Template: Story<CalendarPropsType> = (args) => <Calendar {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  eventsData: eventsData
-}
-
+  eventsData,
+};
