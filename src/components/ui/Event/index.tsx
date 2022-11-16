@@ -2,24 +2,20 @@ import React from 'react';
 import { useMediaQuery } from 'react-responsive';
 import styles from './index.module.scss';
 import { spliceEvent } from '../../../utils';
-import { EventsDataType } from '../../Calendar/type';
+import { EventType } from '../../Calendar/types';
 
 export interface EventPropsType {
-  date: string;
-  handleClickEvent: (id: number, currentEvents?: EventsDataType) => void;
-  eventsData: EventsDataType[];
+  handleClickEvent: (id: number, events: EventType[]) => void;
+  events: EventType[];
   past?: boolean;
 }
 
 export const Event = ({
-  date,
-  eventsData,
+  events,
   handleClickEvent = () => {},
   past,
 }: EventPropsType) => {
   const isDesktopWidth1200 = useMediaQuery({ query: '(max-width: 1200px)' });
-  const currentEvents = eventsData.find((event) => event.date === date);
-  const events = currentEvents?.event ?? [];
 
   if (!events || !events.length) return null;
 
@@ -32,8 +28,8 @@ export const Event = ({
           <span
             role="button"
             tabIndex={0}
-            onClick={() => handleClickEvent(event.id, currentEvents)}
-            onKeyDown={() => handleClickEvent(event.id, currentEvents)}
+            onClick={() => handleClickEvent(event.id, events)}
+            onKeyDown={() => handleClickEvent(event.id, events)}
             key={el.id}
             style={{ opacity: `${past && 0.5}` }}
             className={styles.event}

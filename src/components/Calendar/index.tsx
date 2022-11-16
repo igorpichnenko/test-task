@@ -7,7 +7,8 @@ import { useCalendarControl } from './hooks/useCalendarControl';
 import { Event } from '../ui/Event';
 import { EventForm } from '../EventForm';
 import { EventPopup } from '../EventPopup';
-import { CalendarPropsType } from './type';
+import { CalendarPropsType } from './types';
+import { getEvents } from '../../utils';
 
 moment.locale('ru');
 
@@ -21,7 +22,7 @@ const Calendar: React.FC<CalendarPropsType> = ({ eventsData }) => {
     calendarDays,
     handleSubmit,
     currentCheckedDate,
-    currentEvent,
+    currentEvents,
     isEventPopup,
     setEventPopup,
     handleDeleteEvent,
@@ -87,8 +88,7 @@ const Calendar: React.FC<CalendarPropsType> = ({ eventsData }) => {
                         <Event
                           past={past}
                           handleClickEvent={handleClickEvent}
-                          date={date}
-                          eventsData={calendarState.eventsData}
+                          events={getEvents(calendarState.eventsData, date)}
                         />
                       </td>
                     ),
@@ -103,12 +103,13 @@ const Calendar: React.FC<CalendarPropsType> = ({ eventsData }) => {
         />
       </div>
 
-      {currentEvent && currentEvent.event.length > 0 && (
+      {currentEvents && currentEvents.length > 0 && (
         <EventPopup
+          date={currentCheckedDate}
           isEventPopup={isEventPopup}
           handleDeleteEvent={handleDeleteEvent}
           setEventPopup={setEventPopup}
-          currentEvent={currentEvent}
+          events={currentEvents}
         />
       )}
     </section>

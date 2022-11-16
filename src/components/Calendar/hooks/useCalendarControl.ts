@@ -1,7 +1,7 @@
 import moment from 'moment';
 import { useEffect, useState } from 'react';
 import { createDaysOfMonth } from '../../../utils';
-import { CalendarPropsType, EventsDataType } from '../type';
+import { CalendarPropsType, EventType } from '../types';
 
 export interface CalendarDaysType {
   value: number;
@@ -22,7 +22,7 @@ export const useCalendarControl = ({ eventsData }: CalendarPropsType) => {
   });
   const [calendarDays, setCalendarDays] = useState<CalendarDaysType[]>();
   const [currentCheckedDate, setCurrentCheckedDate] = useState('');
-  const [currentEvent, setCurrentEvent] = useState<EventsDataType>();
+  const [currentEvents, setCurrentEvents] = useState<EventType[]>();
   const [isEventPopup, setEventPopup] = useState(false);
 
   useEffect(() => {
@@ -80,19 +80,21 @@ export const useCalendarControl = ({ eventsData }: CalendarPropsType) => {
         currentDate: calendarState.currentDate.add(1, 'month'),
       });
     },
-    handleClickEvent: (id: number, currentEvents?: EventsDataType) => {
-      setCurrentEvent(currentEvents);
+    handleClickEvent: (id: number, events: EventType[]) => {
+      setCurrentEvents(events);
       setEventPopup(true);
 
-      const currentEvent = currentEvents?.event.find((el) => el.id === id);
+      const currentEvent = events.find((el) => el.id === id);
       // eslint-disable-next-line no-console
       console.info(currentEvent, 'currentEvent');
     },
-    handleDeleteEvent: (id: number, date: string) => {
+    handleDeleteEvent: (id: number) => {
       const events = calendarState.eventsData;
-      const indexArray = events.findIndex((el) => el.date === date);
+      const indexArray = events.findIndex(
+        (el) => el.date === currentCheckedDate,
+      );
 
-      const oldEvent = events.find((el) => el.date === date);
+      const oldEvent = events.find((el) => el.date === currentCheckedDate);
       if (oldEvent) {
         const index = oldEvent?.event.findIndex((el) => el.id === id);
         if (index !== -1) {
@@ -146,7 +148,7 @@ export const useCalendarControl = ({ eventsData }: CalendarPropsType) => {
     setCalendarState,
     calendarDays,
     currentCheckedDate,
-    currentEvent,
+    currentEvents,
     isEventPopup,
     setEventPopup,
   };

@@ -16,15 +16,11 @@ Default.args = {
   isEventPopup: true,
   setEventPopup: () => {},
   handleDeleteEvent: () => {},
-  currentEvent: {
-    id: 6,
-    event: [
-      {
-        text: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
-        subtitle: 'lorem ipsum lorem ipsum lorem ipsum',
-        id: 6,
-      },
-    ],
-    date: '11/11/22022',
-  },
+  events: [
+    {
+      text: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum',
+      subtitle: 'lorem ipsum lorem ipsum lorem ipsum',
+      id: 6,
+    },
+  ],
 };

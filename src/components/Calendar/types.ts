@@ -1,14 +1,14 @@
-export interface EventType {
+export type EventType = {
   text: string;
   subtitle: string;
   id: number;
-}
+};
 
-export interface EventsDataType {
+export type EventsDataType = {
   id: number;
   event: EventType[];
   date: string;
-}
+};
 export interface CalendarPropsType {
   eventsData: EventsDataType[];
 }

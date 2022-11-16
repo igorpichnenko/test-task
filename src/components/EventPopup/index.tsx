@@ -1,5 +1,5 @@
 import React from 'react';
-import { EventsDataType } from '../Calendar/type';
+import { EventType } from '../Calendar/types';
 import { Button } from '../ui/Button';
 import { Popup } from '../ui/Popup';
 import styles from './index.module.scss';
@@ -7,15 +7,17 @@ import styles from './index.module.scss';
 export interface EventPopupPropsType {
   isEventPopup: boolean;
   setEventPopup: (isEventPopup: boolean) => void;
-  currentEvent: EventsDataType;
-  handleDeleteEvent: (id: number, date: string) => void;
+  events: EventType[];
+  handleDeleteEvent: (id: number) => void;
+  date: string;
 }
 
 export const EventPopup = ({
   isEventPopup,
   setEventPopup,
-  currentEvent,
+  events,
   handleDeleteEvent,
+  date,
 }: EventPopupPropsType) => {
   return (
     <>
@@ -28,11 +30,11 @@ export const EventPopup = ({
               </Button>
             </div>
 
-            {currentEvent.event.map((el) => {
+            {events.map((el) => {
               return (
                 <li key={el.id} className={styles.li}>
                   <p>
-                    Событие:{' '}
+                    {date} Событие:{' '}
                     <span className={styles.subtitle}>{el.subtitle}</span>
                   </p>
                   <p>
@@ -41,7 +43,7 @@ export const EventPopup = ({
                   <Button
                     small
                     secondary
-                    onClick={() => handleDeleteEvent(el.id, currentEvent.date)}
+                    onClick={() => handleDeleteEvent(el.id)}
                   >
                     Удалить
                   </Button>

@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { EventType } from './components/Calendar/type';
+import { EventsDataType, EventType } from './components/Calendar/types';
 
 export const createDaysOfMonth = (refDate: moment.Moment) => {
   const date = moment(refDate).endOf('month');
@@ -192,4 +192,8 @@ export const spliceEvent = (event: EventType, isDesktopWidth1200: boolean) => {
     newEvent = { ...event, subtitle: `${event.subtitle.slice(0, 13)}...` };
   }
   return newEvent;
+};
+
+export const getEvents = (eventsData: EventsDataType[], date: string) => {
+  return eventsData.find((event) => event.date === date)?.event ?? [];
 };

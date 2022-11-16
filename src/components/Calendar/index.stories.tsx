@@ -4,7 +4,7 @@ import { Meta, Story } from '@storybook/react';
 
 import Calendar from './index';
 import { eventsData } from '../../mocks';
-import { CalendarPropsType } from './type';
+import { CalendarPropsType } from './types';
 
 export default {
   title: 'UI components/Calendar',
