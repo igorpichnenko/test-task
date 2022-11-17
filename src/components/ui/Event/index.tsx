@@ -5,8 +5,8 @@ import { spliceEvent } from '../../../utils';
 import { EventType } from '../../Calendar/types';
 
 export interface EventPropsType {
-  handleClickEvent: (id: number, events: EventType[]) => void;
-  events: EventType[];
+  handleClickEvent?: (id?: number, events?: EventType[]) => void;
+  events?: EventType[];
   past?: boolean;
 }
 

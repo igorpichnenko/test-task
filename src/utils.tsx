@@ -185,12 +185,14 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
 
 export const spliceEvent = (event: EventType, isDesktopWidth1200: boolean) => {
   let newEvent = event;
-
-  if (!isDesktopWidth1200 && event.subtitle.length >= 19) {
-    newEvent = { ...event, subtitle: `${event.subtitle.slice(0, 19)}...` };
-  } else if (event.subtitle.length >= 13) {
-    newEvent = { ...event, subtitle: `${event.subtitle.slice(0, 13)}...` };
+  if (event.subtitle) {
+    if (!isDesktopWidth1200 && event.subtitle.length >= 19) {
+      newEvent = { ...event, subtitle: `${event.subtitle.slice(0, 19)}...` };
+    } else if (event.subtitle.length >= 13) {
+      newEvent = { ...event, subtitle: `${event.subtitle.slice(0, 13)}...` };
+    }
   }
+
   return newEvent;
 };
 

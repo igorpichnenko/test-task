@@ -314,6 +314,36 @@
         padding-top: var(--size-base-x1);
         padding-left: var(--size-base-x1);
     }
+}
+
+.dayDate {
+    @include SmallBaseFont();
 
 
+    height: 45px;
+    max-width: unset;
+    min-width: unset;
+
+    color: var(--color-font-primary);
+
+    padding-top: var(--size-base-x1);
+    padding-left: var(--size-base-x1);
+    padding-bottom: var(--size-base-x1);
+    padding-right: var(--size-base-x1);
+
+}
+
+.dayHeaderDate {
+    @include SmallBaseFont();
+
+    height: 28px;
+    max-width: unset;
+    min-width: unset;
+
+    padding-top: var(--size-base-x1);
+    padding-left: var(--size-base-x1);
+}
+
+.calendarDate {
+    width: 260px;
 }

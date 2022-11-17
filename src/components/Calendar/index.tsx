@@ -3,36 +3,35 @@ import moment from 'moment';
 import 'moment/locale/ru';
 import styles from './index.module.scss';
 import { daysOfTheWeek } from '../../mocks';
-import { useCalendarControl } from './hooks/useCalendarControl';
 import { Event } from '../ui/Event';
-import { EventForm } from '../EventForm';
 import { EventPopup } from '../EventPopup';
 import { CalendarPropsType } from './types';
 import { getEvents } from '../../utils';
 
 moment.locale('ru');
 
-const Calendar: React.FC<CalendarPropsType> = ({ eventsData }) => {
-  const {
-    calendarState,
-    prevMonth,
-    nextMonth,
-    handleClickEvent,
-    handleClickCell,
-    calendarDays,
-    handleSubmit,
-    currentCheckedDate,
-    currentEvents,
-    isEventPopup,
-    setEventPopup,
-    handleDeleteEvent,
-  } = useCalendarControl({ eventsData });
-
+const Calendar: React.FC<CalendarPropsType> = ({
+  calendarState,
+  prevMonth,
+  nextMonth,
+  handleClickEvent,
+  handleClickCell,
+  calendarDays,
+  currentCheckedDate,
+  currentEvents,
+  isEventPopup,
+  setEventPopup,
+  handleDeleteEvent,
+  calendarEvent,
+  children,
+}) => {
   return (
     <section className={styles.wrapper}>
-      <div className={styles.calendar}>
+      <div
+        className={`${styles.calendar} ${calendarEvent && styles.calendarDate}`}
+      >
         <div className={styles.header}>
-          <h2 className={styles.title}>Календарь</h2>
+          {!calendarEvent && <h2 className={styles.title}>Календарь</h2>}
 
           <div>
             <button
@@ -58,7 +57,12 @@ const Calendar: React.FC<CalendarPropsType> = ({ eventsData }) => {
             <tbody>
               <tr className={styles.calendarBody}>
                 {daysOfTheWeek.map((el) => (
-                  <th className={styles.dayHeader} key={el}>
+                  <th
+                    className={`${styles.dayHeader} ${
+                      !calendarEvent && styles.dayHeaderDate
+                    }`}
+                    key={el}
+                  >
                     {el}
                   </th>
                 ))}
@@ -75,7 +79,9 @@ const Calendar: React.FC<CalendarPropsType> = ({ eventsData }) => {
                     }) => (
                       <td
                         key={date}
-                        className={styles.day}
+                        className={`${styles.day}  ${
+                          !calendarEvent && styles.dayDate
+                        }`}
                         onClick={() => handleClickCell(calendarDays, date)}
                         role="presentation"
                       >
@@ -85,11 +91,13 @@ const Calendar: React.FC<CalendarPropsType> = ({ eventsData }) => {
                         >
                           {value}
                         </span>
-                        <Event
-                          past={past}
-                          handleClickEvent={handleClickEvent}
-                          events={getEvents(calendarState.eventsData, date)}
-                        />
+                        {!calendarEvent && (
+                          <Event
+                            past={past}
+                            handleClickEvent={handleClickEvent}
+                            events={getEvents(calendarState.eventsData, date)}
+                          />
+                        )}
                       </td>
                     ),
                   )}
@@ -97,13 +105,10 @@ const Calendar: React.FC<CalendarPropsType> = ({ eventsData }) => {
             </tbody>
           </table>
         </div>
-        <EventForm
-          onSubmit={handleSubmit}
-          currentCheckedDate={currentCheckedDate}
-        />
+        {children}
       </div>
 
-      {currentEvents && currentEvents.length > 0 && (
+      {currentEvents && !calendarEvent && currentEvents.length > 0 && (
         <EventPopup
           date={currentCheckedDate}
           isEventPopup={isEventPopup}

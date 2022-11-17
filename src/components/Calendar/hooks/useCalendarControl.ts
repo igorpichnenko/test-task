@@ -1,21 +1,13 @@
 import moment from 'moment';
 import { useEffect, useState } from 'react';
 import { createDaysOfMonth } from '../../../utils';
-import { CalendarPropsType, EventType } from '../types';
+import { EventsDataType, EventType, CalendarDaysType } from '../types';
 
-export interface CalendarDaysType {
-  value: number;
-  id: number;
-  date: string;
-  past?: boolean;
-  color?: string;
-  backgroundColor?: string;
-  opacity?: string;
-  event?: string[];
-  holiday?: boolean;
-}
-
-export const useCalendarControl = ({ eventsData }: CalendarPropsType) => {
+const useCalendarControl = ({
+  eventsData,
+}: {
+  eventsData: EventsDataType[];
+}) => {
   const [calendarState, setCalendarState] = useState({
     currentDate: moment(),
     eventsData,
@@ -33,7 +25,6 @@ export const useCalendarControl = ({ eventsData }: CalendarPropsType) => {
   return {
     handleSubmit: (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-
       const events = calendarState.eventsData;
       const date = e.currentTarget.date.value;
       const subtitle = e.currentTarget.subtitle.value;
@@ -80,15 +71,15 @@ export const useCalendarControl = ({ eventsData }: CalendarPropsType) => {
         currentDate: calendarState.currentDate.add(1, 'month'),
       });
     },
-    handleClickEvent: (id: number, events: EventType[]) => {
+    handleClickEvent: (id?: number, events?: EventType[]) => {
       setCurrentEvents(events);
       setEventPopup(true);
 
-      const currentEvent = events.find((el) => el.id === id);
+      const currentEvent = events?.find((el) => el.id === id);
       // eslint-disable-next-line no-console
       console.info(currentEvent, 'currentEvent');
     },
-    handleDeleteEvent: (id: number) => {
+    handleDeleteEvent: (id?: number) => {
       const events = calendarState.eventsData;
       const indexArray = events.findIndex(
         (el) => el.date === currentCheckedDate,
@@ -153,3 +144,5 @@ export const useCalendarControl = ({ eventsData }: CalendarPropsType) => {
     setEventPopup,
   };
 };
+
+export default useCalendarControl;

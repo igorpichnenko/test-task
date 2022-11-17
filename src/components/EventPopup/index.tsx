@@ -5,18 +5,18 @@ import { Popup } from '../ui/Popup';
 import styles from './index.module.scss';
 
 export interface EventPopupPropsType {
-  isEventPopup: boolean;
-  setEventPopup: (isEventPopup: boolean) => void;
-  events: EventType[];
-  handleDeleteEvent: (id: number) => void;
-  date: string;
+  isEventPopup?: boolean;
+  setEventPopup?: (isEventPopup: boolean) => void;
+  events?: EventType[];
+  handleDeleteEvent?: (id?: number) => void;
+  date?: string;
 }
 
 export const EventPopup = ({
   isEventPopup,
-  setEventPopup,
+  setEventPopup = () => {},
   events,
-  handleDeleteEvent,
+  handleDeleteEvent = () => {},
   date,
 }: EventPopupPropsType) => {
   return (
@@ -30,7 +30,7 @@ export const EventPopup = ({
               </Button>
             </div>
 
-            {events.map((el) => {
+            {events?.map((el) => {
               return (
                 <li key={el.id} className={styles.li}>
                   <p>
