@@ -55,6 +55,13 @@
     justify-content: space-between;
 
     cursor: pointer;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.day::-webkit-scrollbar {
+    display: none;
 }
 
 .day:last-child {
