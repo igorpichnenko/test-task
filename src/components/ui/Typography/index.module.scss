@@ -1,0 +1,14 @@
+@import "../../../assets/variables/scss/mixin.scss";
+
+
+.small {
+    @include smallBaseFont()
+}
+
+.large {
+    @include largeBaseFont()
+}
+
+.medium {
+    @include mediumBaseFont()
+}

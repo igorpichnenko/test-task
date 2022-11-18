@@ -3,6 +3,7 @@ import { useMediaQuery } from 'react-responsive';
 import styles from './index.module.scss';
 import { spliceEvent } from '../../../utils';
 import { EventType } from '../../Calendar/types';
+import { Typography } from '../Typography';
 
 export interface EventPropsType {
   handleClickEvent: (id: number, events: EventType[]) => void;
@@ -20,12 +21,12 @@ export const Event = ({
   if (!events || !events.length) return null;
 
   return (
-    <span className={styles.eventsWrapper}>
+    <Typography className={styles.eventsWrapper}>
       {events.map((el) => {
         const event = spliceEvent(el, isDesktopWidth1200);
 
         return (
-          <span
+          <Typography
             role="button"
             tabIndex={0}
             onClick={() => handleClickEvent(event.id, events)}
@@ -35,9 +36,9 @@ export const Event = ({
             className={styles.event}
           >
             {event.subtitle}
-          </span>
+          </Typography>
         );
       })}
-    </span>
+    </Typography>
   );
 };

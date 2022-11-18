@@ -12,14 +12,14 @@ $smartWidth: 413px;
     line-height: var(--font-calendar-date-large-line-height);
 }
 
-@mixin MediumBaseFont() {
+@mixin mediumBaseFont() {
 
     font-weight: var(--font-calendar-date-medium-font-weight);
     font-size: var(--font-calendar-date-medium-font-size);
     line-height: var(--font-calendar-date-medium-line-height);
 }
 
-@mixin SmallBaseFont() {
+@mixin smallBaseFont() {
     font-weight: var(--font-calendar-date-small-font-weight);
     font-size: var(--font-calendar-date-small-font-size);
     line-height: var(--font-calendar-date-small-line-height);

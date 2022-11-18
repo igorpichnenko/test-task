@@ -2,6 +2,7 @@ import React from 'react';
 import { EventType } from '../Calendar/types';
 import { Button } from '../ui/Button';
 import { Popup } from '../ui/Popup';
+import { Typography } from '../ui/Typography';
 import styles from './index.module.scss';
 
 export interface EventPopupPropsType {
@@ -33,13 +34,16 @@ export const EventPopup = ({
             {events.map((el) => {
               return (
                 <li key={el.id} className={styles.li}>
-                  <p>
+                  <Typography as="p">
                     {date} Событие:{' '}
-                    <span className={styles.subtitle}>{el.subtitle}</span>
-                  </p>
-                  <p>
-                    Подробности: <span className={styles.text}>{el.text}</span>
-                  </p>{' '}
+                    <Typography className={styles.subtitle}>
+                      {el.subtitle}
+                    </Typography>
+                  </Typography>
+                  <Typography as="p">
+                    Подробности:{' '}
+                    <Typography className={styles.text}>{el.text}</Typography>
+                  </Typography>{' '}
                   <Button
                     small
                     secondary

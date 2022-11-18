@@ -35,7 +35,11 @@ export const useCalendarControl = ({ eventsData }: CalendarPropsType) => {
       e.preventDefault();
 
       const events = calendarState.eventsData;
-      const date = e.currentTarget.date.value;
+
+      const date = moment(e.currentTarget.date.value, 'DD/MM/YY').format(
+        'DD/MM/YY',
+      );
+
       const subtitle = e.currentTarget.subtitle.value;
       const id = Math.random();
       const text = e.currentTarget.text.value;

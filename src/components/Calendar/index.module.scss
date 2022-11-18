@@ -90,7 +90,7 @@
     border-radius: 0px var(--radius-calendar-cell) 0px 0px;
 }
 
-.pagingButton {
+.navigateButton {
     display: block;
     border: unset;
     cursor: pointer;
@@ -109,7 +109,7 @@
 }
 
 
-.pagingButton:first-child {
+.navigateButton:first-child {
     left: 10px;
 
     .icon {
@@ -118,7 +118,7 @@
     }
 }
 
-.pagingButton:last-child {
+.navigateButton:last-child {
     right: 10px;
 
     .icon {
@@ -179,7 +179,7 @@
     }
 
     .day {
-        @include MediumBaseFont();
+        @include mediumBaseFont();
 
         height: 96px;
         max-width: unset;
@@ -192,7 +192,7 @@
     }
 
     .dayHeader {
-        @include MediumBaseFont();
+        @include mediumBaseFont();
 
         height: 50px;
         max-width: unset;
@@ -241,7 +241,7 @@
     }
 
     .day {
-        @include SmallBaseFont();
+        @include smallBaseFont();
 
         height: 55px;
 
@@ -254,7 +254,7 @@
     }
 
     .dayHeader {
-        @include SmallBaseFont();
+        @include smallBaseFont();
 
         height: 38px;
 

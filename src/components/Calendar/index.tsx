@@ -9,6 +9,8 @@ import { EventForm } from '../EventForm';
 import { EventPopup } from '../EventPopup';
 import { CalendarPropsType } from './types';
 import { getEvents } from '../../utils';
+import { Typography } from '../ui/Typography';
+import { Button } from '../ui/Button';
 
 moment.locale('ru');
 
@@ -32,23 +34,27 @@ const Calendar: React.FC<CalendarPropsType> = ({ eventsData }) => {
     <section className={styles.wrapper}>
       <div className={styles.calendar}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Календарь</h2>
+          <Typography as="h2" className={styles.title}>
+            Календарь
+          </Typography>
 
           <div>
-            <button
+            <Button
+              isDefault={false}
               type="button"
-              className={styles.pagingButton}
+              className={styles.navigateButton}
               onClick={prevMonth}
             >
               <i className={styles.icon} />
-            </button>
-            <button
+            </Button>
+            <Button
+              isDefault={false}
               type="button"
-              className={styles.pagingButton}
+              className={styles.navigateButton}
               onClick={nextMonth}
             >
               <i className={styles.icon} />
-            </button>
+            </Button>
           </div>
 
           <table>
@@ -79,12 +85,12 @@ const Calendar: React.FC<CalendarPropsType> = ({ eventsData }) => {
                         onClick={() => handleClickCell(calendarDays, date)}
                         role="presentation"
                       >
-                        <span
+                        <Typography
                           className={styles.dayNumber}
                           style={{ backgroundColor, opacity, color }}
                         >
                           {value}
-                        </span>
+                        </Typography>
                         <Event
                           past={past}
                           handleClickEvent={handleClickEvent}

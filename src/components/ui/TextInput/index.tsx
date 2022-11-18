@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef, LegacyRef } from 'react';
 import styles from './index.module.scss';
 
 export interface TextInputPropsType {
@@ -9,22 +9,22 @@ export interface TextInputPropsType {
   defaultValue?: string;
 }
 
-export const TextInput: React.FC<TextInputPropsType> = ({
-  placeholder,
-  disabled,
-  required,
-  name,
-  defaultValue,
-}) => {
-  return (
-    <input
-      required={required}
-      className={styles.textInput}
-      type="text"
-      placeholder={placeholder}
-      disabled={disabled}
-      name={name}
-      defaultValue={defaultValue}
-    />
-  );
-};
+export const TextInput = forwardRef(
+  (
+    { placeholder, disabled, required, name, defaultValue }: TextInputPropsType,
+    ref: LegacyRef<HTMLInputElement> | undefined,
+  ) => {
+    return (
+      <input
+        required={required}
+        className={styles.textInput}
+        type="text"
+        placeholder={placeholder}
+        disabled={disabled}
+        name={name}
+        defaultValue={defaultValue}
+        ref={ref}
+      />
+    );
+  },
+);
