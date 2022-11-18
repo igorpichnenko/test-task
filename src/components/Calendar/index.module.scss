@@ -48,7 +48,7 @@
     padding-bottom: var(--size-base-x2);
     padding-right: var(--size-base-x3);
 
-    overflow: scroll;
+    overflow-x: scroll;
 
     display: flex;
     flex-direction: column;
@@ -246,6 +246,7 @@
         height: 55px;
 
         align-items: center;
+        overflow-y: scroll;
 
         padding-top: var(--size-base-x1);
         padding-left: var(--size-base-x4);

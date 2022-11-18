@@ -57,16 +57,16 @@ const Calendar: React.FC<CalendarPropsType> = ({ eventsData }) => {
             </Button>
           </div>
 
-          <table>
-            <caption className={styles.caption}>
+          <div>
+            <h2 className={styles.caption}>
               {calendarState.currentDate.format('MMMM YYYY')}
-            </caption>
-            <tbody>
-              <tr className={styles.calendarBody}>
+            </h2>
+            <div>
+              <div className={styles.calendarBody}>
                 {daysOfTheWeek.map((el) => (
-                  <th className={styles.dayHeader} key={el}>
+                  <div className={styles.dayHeader} key={el}>
                     {el}
-                  </th>
+                  </div>
                 ))}
 
                 {calendarDays &&
@@ -79,7 +79,7 @@ const Calendar: React.FC<CalendarPropsType> = ({ eventsData }) => {
                       backgroundColor,
                       past,
                     }) => (
-                      <td
+                      <div
                         key={date}
                         className={styles.day}
                         onClick={() => handleClickCell(calendarDays, date)}
@@ -96,12 +96,12 @@ const Calendar: React.FC<CalendarPropsType> = ({ eventsData }) => {
                           handleClickEvent={handleClickEvent}
                           events={getEvents(calendarState.eventsData, date)}
                         />
-                      </td>
+                      </div>
                     ),
                   )}
-              </tr>
-            </tbody>
-          </table>
+              </div>
+            </div>
+          </div>
         </div>
         <EventForm
           onSubmit={handleSubmit}
