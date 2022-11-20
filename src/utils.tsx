@@ -26,7 +26,7 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
       calendarDays.push({
         value: up,
         past: true,
-        color: 'var(--color-text-calendar-date-primary-past)',
+        color: 'var(--color-text-calendar-cell-past)',
         id: up,
         date: `${up}/${prevMouth.format('MM/YY')}`,
       });
@@ -34,7 +34,7 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
       calendarDays.push({
         value: up - 3,
         past: true,
-        color: 'var(--color-text-calendar-date-primary-past)',
+        color: 'var(--color-text-calendar-cell-past)',
         id: up - 3,
         date: `${up - 3}/${prevMouth.format('MM/YY')}`,
       });
@@ -42,7 +42,7 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
       calendarDays.push({
         value: up - 2,
         past: true,
-        color: 'var(--color-text-calendar-date-primary-past)',
+        color: 'var(--color-text-calendar-cell-past)',
         id: up - 2,
         date: `${up - 2}/${prevMouth.format('MM/YY')}`,
       });
@@ -50,7 +50,7 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
       calendarDays.push({
         value: up - 1,
         past: true,
-        color: 'var(--color-text-calendar-date-primary-past)',
+        color: 'var(--color-text-calendar-cell-past)',
         id: up - 1,
         date: `${up - 1}/${prevMouth.format('MM/YY')}`,
       });
@@ -96,9 +96,8 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
           value: day,
           id: day,
           holiday: true,
-          backgroundColor:
-            'var(--color-background-calendar-date-primary-hover)',
-          color: 'var(--color-background-body-primary)',
+          backgroundColor: 'var(--color-background-day-number-hover)',
+          color: 'var(--color-text-event-hover)',
           date: `${formatDay}/${formatMouth}/${String(year).slice(2)}`,
         });
       } else {
@@ -106,7 +105,7 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
           value: day,
           id: day,
           holiday: true,
-          color: 'var(--color-text-calendar-date-primary-holiday)',
+          color: 'var(--color-text-calendar-cell-holiday)',
           date: `${formatDay}/${formatMouth}/${String(year).slice(2)}`,
         });
       }
@@ -118,8 +117,8 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
       calendarDays.push({
         value: day,
         id: day,
-        backgroundColor: 'var(--color-background-calendar-date-primary-hover)',
-        color: 'var(--color-background-body-primary)',
+        backgroundColor: 'var(--color-background-day-number-hover)',
+        color: 'var(--color-text-event-hover)',
         date: `${formatDay}/${formatMouth}/${String(year).slice(2)}`,
       });
     } else {
@@ -166,7 +165,7 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
         past: true,
         holiday: true,
         opacity: '0.5',
-        color: 'var(--color-text-calendar-date-primary-holiday)',
+        color: 'var(--color-text-calendar-cell-holiday)',
         date: `${formatDay}/${formatMouth}/${String(nextYear).slice(2)}`,
       });
     } else {
@@ -174,7 +173,7 @@ export const createDaysOfMonth = (refDate: moment.Moment) => {
         value: day,
         id: day,
         past: true,
-        color: 'var(--color-text-calendar-date-primary-past)',
+        color: 'var(--color-text-calendar-cell-past)',
         date: `${formatDay}/${formatMouth}/${String(nextYear).slice(2)}`,
       });
     }

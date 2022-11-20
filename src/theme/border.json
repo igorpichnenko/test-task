@@ -1,0 +1,24 @@
+{
+  "border": {
+    "radius": {
+      "button": {
+        "primary": {
+          "value": "6px",
+          "type": "borderRadius"
+        },
+        "secondary": {
+          "value": "8px",
+          "type": "borderRadius"
+        }
+      },
+      "event": {
+        "value": "4px",
+        "type": "borderRadius"
+      },
+      "input": {
+        "value": "6px",
+        "type": "borderRadius"
+      }
+    }
+  }
+}

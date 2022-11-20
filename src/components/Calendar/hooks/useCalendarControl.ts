@@ -127,9 +127,9 @@ export const useCalendarControl = ({ eventsData }: CalendarPropsType) => {
           let color = '';
 
           if (element.holiday) {
-            color = 'var(--color-text-calendar-date-primary-holiday)';
+            color = 'var(--color-text-calendar-cell-holiday)';
           } else if (element.past) {
-            color = 'var(--color-text-calendar-date-primary-past)';
+            color = 'var(--color-text-calendar-cell-past)';
           }
           element.color = color;
         });
@@ -140,9 +140,8 @@ export const useCalendarControl = ({ eventsData }: CalendarPropsType) => {
         }
         calendarDays.splice(index, 0, {
           ...activeEvent,
-          backgroundColor:
-            'var(--color-background-calendar-date-primary-hover)',
-          color: 'var(--color-background-body-primary)',
+          backgroundColor: 'var(--color-background-day-number-hover)',
+          color: 'var(--color-text-event-hover)',
         });
 
         setCalendarDays([...calendarDays]);

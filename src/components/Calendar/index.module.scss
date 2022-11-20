@@ -1,7 +1,7 @@
 @import "../../assets/variables/scss/mixin.scss";
 
 .wrapper {
-    background: var(--color-background-body-primary);
+    background: var(--color-background-base-primary);
     border-radius: 25px;
 
     display: flex;
@@ -35,13 +35,13 @@
     @include largeBaseFont();
 
     box-sizing: border-box;
-    border: 1px solid var(--color-border-calendar-cell-primary-default);
+    border: 1px solid var(--color-border-calendar-cell);
 
     height: 141px;
     max-width: 146.86px;
     min-width: 130px;
 
-    color: var(--color-font-primary);
+    color: var(--color-text-calendar-cell-normal);
 
     padding-top: var(--size-base-x6);
     padding-left: var(--size-base-x4);
@@ -65,18 +65,18 @@
 }
 
 .day:last-child {
-    border-radius: 0px 0px var(--radius-calendar-cell) 0px;
+    border-radius: 0px 0px var(--border-radius-button-primary) 0px;
 }
 
 .day:nth-last-of-type(7) {
-    border-radius: 0px 0px 0px var(--radius-calendar-cell);
+    border-radius: 0px 0px 0px var(--border-radius-button-primary);
 }
 
 .dayHeader {
     @include largeBaseFont();
 
     box-sizing: border-box;
-    border: 1px solid var(--color-border-calendar-cell-primary-default);
+    border: 1px solid var(--color-border-calendar-cell);
     text-align: left;
 
     height: 59px;
@@ -86,15 +86,15 @@
     padding-top: var(--size-base-x6);
     padding-left: var(--size-base-x6);
 
-    color: var(--color-font-primary);
+    color: var(--color-text-calendar-cell-normal);
 }
 
 .dayHeader:first-child {
-    border-radius: var(--radius-calendar-cell) 0px 0px 0px;
+    border-radius: var(--border-radius-button-primary) 0px 0px 0px;
 }
 
 .dayHeader:nth-child(7) {
-    border-radius: 0px var(--radius-calendar-cell) 0px 0px;
+    border-radius: 0px var(--border-radius-button-primary) 0px 0px;
 }
 
 .navigateButton {
@@ -106,7 +106,7 @@
 }
 
 .icon {
-    border: solid var(--color-font-primary);
+    border: solid var(--color-border-arrow);
     border-width: 0 2.5px 2.5px 0;
     border-radius: 2px;
     display: inline-block;
@@ -136,10 +136,10 @@
 
 
 .caption {
-    font-size: var(--font-caption-large-font-size);
-    font-weight: var(--font-caption-large-font-weight);
-    line-height: var(--font-caption-large-line-height);
-    color: var(--color-font-secondary);
+    font-size: var(--font-size-calendar-subtitle);
+    font-weight: var(--font-weight-calendar-subtitle);
+    line-height: var(--line-height-calendar-subtitle);
+    color: var(--color-text-base-secondary);
 
     margin-bottom: var(--size-base-x10);
 
@@ -161,11 +161,11 @@
 }
 
 .title {
-    font-weight: var(--font-calendar-title-secondary-font-weight);
-    font-size: var(--font-calendar-title-secondary-font-size);
-    line-height: var(--font-calendar-title-secondary-line-height);
+    font-weight: var(--font-weight-calendar-title);
+    font-size: var(--font-size-calendar-title);
+    line-height: var(--line-height-calendar-title);
     letter-spacing: var(--font-calendar-title-secondary-letter-spacing);
-    color: var(--color-font-secondary);
+    color: var(--color-text-base-primary);
 
     margin-bottom: var(--size-base-x16);
 }

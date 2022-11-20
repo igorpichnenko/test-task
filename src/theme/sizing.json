@@ -1,0 +1,28 @@
+{
+  "size": {
+    "w": {
+      "button": {
+        "primary": {
+          "value": "282",
+          "type": "sizing"
+        }
+      }
+    },
+    "h": {
+      "button": {
+        "primary": {
+          "value": "36px",
+          "type": "sizing"
+        }
+      }
+    }
+  },
+  "space": {
+    "button": {
+      "primary": {
+        "value": "20px",
+        "type": "spacing"
+      }
+    }
+  }
+}

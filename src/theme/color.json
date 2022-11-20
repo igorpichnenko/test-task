@@ -1,0 +1,148 @@
+{
+  "color": {
+    "background": {
+      "button": {
+        "primary": {
+          "normal": {
+            "value": "#2B96F1",
+            "type": "color"
+          },
+          "active": {
+            "value": "#0F85E9",
+            "type": "color"
+          },
+          "hover": {
+            "value": "#138AEF",
+            "type": "color"
+          },
+          "disable": {
+            "value": "rgba(43, 150, 241, 0.25)",
+            "type": "color"
+          }
+        },
+        "secondary": {
+          "disable": {
+            "value": "rgba(175, 14, 14, 0.25)",
+            "type": "color"
+          },
+          "hover": {
+            "value": "#D70505",
+            "type": "color"
+          },
+          "active": {
+            "value": "#8A1313",
+            "type": "color"
+          },
+          "normal": {
+            "value": "#AF0E0E",
+            "type": "color"
+          }
+        }
+      },
+      "event": {
+        "normal": {
+          "value": "rgba(242, 107, 81, 0.12)",
+          "type": "color"
+        },
+        "hover": {
+          "value": "#F26B51",
+          "type": "color"
+        }
+      },
+      "base": {
+        "primary": {
+          "value": "#afda9c",
+          "type": "color"
+        }
+      },
+      "input": {
+        "value": "#FAFAFA",
+        "type": "color"
+      },
+      "day": {
+        "number": {
+          "hover": {
+            "value": "#b90fdc",
+            "type": "color"
+          }
+        }
+      }
+    },
+    "text": {
+      "button": {
+        "primary": {
+          "normal": {
+            "value": "{color.text.base.primary}",
+            "type": "color"
+          }
+        },
+        "secondary": {
+          "normal": {
+            "value": "#1f1e21",
+            "type": "color"
+          }
+        }
+      },
+      "event": {
+        "normal": {
+          "value": "#FF7733",
+          "type": "color"
+        },
+        "hover": {
+          "value": "{color.text.base.primary}",
+          "type": "color"
+        }
+      },
+      "base": {
+        "primary": {
+          "value": "#fff",
+          "type": "color"
+        },
+        "secondary": {
+          "value": "#fff",
+          "type": "color"
+        }
+      },
+      "input": {
+        "value": "#AAAAAA",
+        "type": "color"
+      },
+      "calendar": {
+        "cell": {
+          "normal": {
+            "value": "#828282",
+            "type": "color"
+          },
+          "hover": {
+            "value": "{color.text.base.primary}",
+            "type": "color"
+          },
+          "past": {
+            "value": "#CCCCCC",
+            "type": "color"
+          },
+          "holiday": {
+            "value": "#5CB85C",
+            "type": "color"
+          }
+        }
+      }
+    },
+    "border": {
+      "calendar": {
+        "cell": {
+          "value": "#E8E8E8",
+          "type": "color"
+        }
+      },
+      "input": {
+        "value": "rgba(0, 0, 0, 0.1)",
+        "type": "color"
+      },
+      "arrow": {
+        "value": "#fff",
+        "type": "color"
+      }
+    }
+  }
+}

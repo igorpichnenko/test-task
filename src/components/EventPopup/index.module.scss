@@ -1,7 +1,7 @@
 .popupContent {
     padding: var(--size-base-x12);
-    background-color: var(--color-background-body-primary);
-    border-radius: var(--radius-calendar-cell);
+    background-color: var(--color-background-base-primary);
+    border-radius: var(--border-radius-event);
     max-width: 1200px;
     max-height: 700px;
     display: flex;
@@ -12,7 +12,7 @@
 }
 
 .li {
-    color: var(--color-text-calendar-date-primary-holiday);
+    color: var(--color-text-calendar-cell-holiday);
 
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@
 
 .subtitle,
 .text {
-    color: var(--color-text-button-secondary-default);
+    color: var(--color-text-button-secondary-normal);
 }
 
 .buttonWrapper {

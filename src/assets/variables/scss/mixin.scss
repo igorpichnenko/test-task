@@ -7,20 +7,20 @@ $mobileWidth: 769px;
 $smartWidth: 413px;
 
 @mixin largeBaseFont() {
-    font-weight: var(--font-calendar-date-large-font-weight);
-    font-size: var(--font-calendar-date-large-font-size);
-    line-height: var(--font-calendar-date-large-line-height);
+    font-weight: var(--font-weight-calendar-cell);
+    font-size: var(--font-size-calendar-large-cell);
+    line-height: var(--line-height-calendar-large-cell);
 }
 
 @mixin mediumBaseFont() {
 
-    font-weight: var(--font-calendar-date-medium-font-weight);
-    font-size: var(--font-calendar-date-medium-font-size);
-    line-height: var(--font-calendar-date-medium-line-height);
+    font-weight: var(--font-weight-calendar-cell);
+    font-size: var(--font-size-calendar-medium-cell);
+    line-height: var(--line-height-calendar-medium-cell);
 }
 
 @mixin smallBaseFont() {
-    font-weight: var(--font-calendar-date-small-font-weight);
-    font-size: var(--font-calendar-date-small-font-size);
-    line-height: var(--font-calendar-date-small-line-height);
+    font-weight: var(--font-weight-calendar-cell);
+    font-size: var(--font-size-calendar-small-cell);
+    line-height: var(--line-height-calendar-small-cell);
 }

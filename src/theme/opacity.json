@@ -1,0 +1,14 @@
+{
+  "opacity": {
+    "button": {
+      "primary": {
+        "value": "0.25",
+        "type": "opacity"
+      }
+    },
+    "event": {
+      "value": "0.7",
+      "type": "opacity"
+    }
+  }
+}

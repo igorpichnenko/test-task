@@ -9,28 +9,28 @@
 
 .event {
   padding: 3px 4px;
-  background: var(--color-background-event-primary-default);
+  background: var(--color-background-event-normal);
   border-radius: 4px;
 
-  font-weight: var(--font-event-large-font-weight);
-  font-size: var(--font-event-large-font-size);
-  line-height: var(--font-event-large-line-height);
+  font-weight: var(--font-weight-large-event);
+  font-size: var(--font-size-large-event);
+  line-height: var(--line-height-large-event);
 
-  color: var(--color-text-event-primary-default);
+  color: var(--color-text-event-normal);
 }
 
 .event:hover {
-  color: var(--color-text-event-primary-hover);
-  background: var(--color-background-event-primary-hover);
+  color: var(--color-text-event-hover);
+  background: var(--color-background-event-hover);
 }
 
 
 @media(max-width: $desktopWidth1200) {
   .event {
 
-    font-weight: var(--font-event-medium-font-weight);
-    font-size: var(--font-event-medium-font-size);
-    line-height: var(--font-event-medium-line-height);
+    font-weight: var(--font-weight-medium-event);
+    font-size: var(--font-size-medium-event);
+    line-height: var(--line-height-medium-event);
   }
 
   .eventsWrapper {
@@ -41,7 +41,7 @@
 @media(max-width: $mobileWidth) {
   .event {
     padding: 4px 4px;
-    background-color: var(--color-text-event-primary-default);
+    background-color: var(--color-text-event-normal);
     border-radius: 10px;
     width: 0;
     height: 0;

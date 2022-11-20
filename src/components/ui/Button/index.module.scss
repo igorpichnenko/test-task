@@ -7,15 +7,14 @@
     min-width: 103px;
     max-width: 282px;
 
-    background: var(--color-background-button-primary-default);
-    border-radius: var(--radius-button);
+    background: var(--color-background-button-primary-normal);
+    border-radius: var(--border-radius-button-primary);
 
-    font-weight: var(--font-button-default-font-weight);
-    font-size: var(--font-button-default-font-size);
-    line-height: var(--font-button-default-line-height);
-    letter-spacing: var(--font-button-default-letter-spacing);
+    font-weight: var(--font-weight-button-primary-base);
+    font-size: var(--font-size-button-primary);
+    line-height: var(--line-height-button-primary);
 
-    color: var(--color-text-button-primary-default);
+    color: var(--color-text-button-primary-normal);
 
     border: unset;
 
@@ -35,17 +34,22 @@
 }
 
 .disabledButton {
-    background-color: var(--color-background-button-primary-disable);
+    background-color: var(--color-background-button-primary-normal);
     opacity: 0.25;
 }
 
 .secondaryButton {
-    color: var(--color-text-button-secondary-default);
-    background-color: transparent;
+    border-radius: var(--border-radius-button-secondary);
+    color: var(--color-text-button-secondary-normal);
+    font-weight: var(--font-weight-button-secondary-base);
+    font-size: var(--font-size-button-secondary);
+    line-height: var(--line-height-button-secondary);
+    letter-spacing: var(--letter-spacing-button-secondary);
+    background-color: var(--color-background-button-secondary-normal);
 }
 
 .secondaryButton:active {
-    background-color: --color-background-button-secondary-active;
+    background-color: var(--color-background-button-secondary-active);
 }
 
 .secondaryButton:hover {

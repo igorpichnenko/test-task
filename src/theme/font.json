@@ -1,0 +1,288 @@
+{
+  "letter-spacing": {
+    "button": {
+      "secondary": {
+        "value": "2%",
+        "type": "letterSpacing"
+      }
+    }
+  },
+  "font-size": {
+    "button": {
+      "primary": {
+        "value": "14px",
+        "type": "fontSizes"
+      },
+      "secondary": {
+        "value": "13px",
+        "type": "fontSizes"
+      }
+    },
+    "large": {
+      "event": {
+        "value": "11px",
+        "type": "fontSizes"
+      }
+    },
+    "input": {
+      "value": "14px",
+      "type": "fontSizes"
+    },
+    "calendar": {
+      "large": {
+        "cell": {
+          "value": "18px",
+          "type": "fontSizes"
+        }
+      },
+      "title": {
+        "value": "34px",
+        "type": "fontSizes"
+      },
+      "subtitle": {
+        "value": "32px",
+        "type": "fontSizes"
+      },
+      "medium": {
+        "cell": {
+          "value": "16px",
+          "type": "fontSizes"
+        }
+      },
+      "small": {
+        "cell": {
+          "value": "14px",
+          "type": "fontSizes"
+        }
+      }
+    },
+    "medium": {
+      "event": {
+        "value": "9px",
+        "type": "fontSizes"
+      }
+    },
+    "small": {
+      "subtitle": {
+        "value": "18px",
+        "type": "fontSizes"
+      }
+    },
+    "form": {
+      "event": {
+        "title": {
+          "value": "16px",
+          "type": "fontSizes"
+        }
+      }
+    }
+  },
+  "line-height": {
+    "button": {
+      "primary": {
+        "value": "16px",
+        "type": "lineHeights"
+      },
+      "secondary": {
+        "value": "14px",
+        "type": "lineHeights"
+      }
+    },
+    "large": {
+      "event": {
+        "value": "18px",
+        "type": "lineHeights"
+      }
+    },
+    "input": {
+      "value": "21px",
+      "type": "lineHeights"
+    },
+    "calendar": {
+      "large": {
+        "cell": {
+          "value": "23px",
+          "type": "lineHeights"
+        }
+      },
+      "title": {
+        "value": "38px",
+        "type": "lineHeights"
+      },
+      "subtitle": {
+        "value": "35px",
+        "type": "lineHeights"
+      },
+      "medium": {
+        "cell": {
+          "value": "20px",
+          "type": "lineHeights"
+        }
+      },
+      "small": {
+        "cell": {
+          "value": "20px",
+          "type": "lineHeights"
+        }
+      }
+    },
+    "form": {
+      "event": {
+        "title": {
+          "value": "16px",
+          "type": "lineHeights"
+        }
+      }
+    },
+    "medium": {
+      "event": {
+        "value": "12px",
+        "type": "lineHeights"
+      }
+    }
+  },
+  "font-weight": {
+    "button": {
+      "primary": {
+        "base": {
+          "value": "500",
+          "type": "fontWeights"
+        }
+      },
+      "secondary": {
+        "base": {
+          "value": "700",
+          "type": "fontWeights"
+        }
+      }
+    },
+    "large": {
+      "event": {
+        "value": "600",
+        "type": "fontWeights"
+      }
+    },
+    "input": {
+      "value": "400",
+      "type": "fontWeights"
+    },
+    "calendar": {
+      "cell": {
+        "value": "500",
+        "type": "fontWeights"
+      },
+      "title": {
+        "value": "700",
+        "type": "fontWeights"
+      },
+      "subtitle": {
+        "value": "600",
+        "type": "fontWeights"
+      }
+    },
+    "form": {
+      "event": {
+        "title": {
+          "value": "600",
+          "type": "fontWeights"
+        }
+      }
+    },
+    "medium": {
+      "event": {
+        "value": "700",
+        "type": "fontWeights"
+      }
+    }
+  },
+  "font-family": {
+    "base": {
+      "value": "Montserrat",
+      "type": "fontFamilies"
+    }
+  },
+  "font": {
+    "button": {
+      "primary": {
+        "value": {
+          "fontFamily": "{font-family.base}",
+          "fontWeight": "{font-weight.button.primary.base}",
+          "lineHeight": "{line-height.button.primary}",
+          "fontSize": "{font-size.button.primary}",
+          "letterSpacing": "{letter-spacing.button.secondary}"
+        },
+        "type": "typography"
+      },
+      "secondary": {
+        "value": {
+          "fontFamily": "{font-family.base}",
+          "fontWeight": "{font-weight.button.secondary.base}",
+          "lineHeight": "{line-height.button.secondary}",
+          "fontSize": "{font-size.button.secondary}",
+          "letterSpacing": "{letter-spacing.button.secondary}"
+        },
+        "type": "typography"
+      }
+    },
+    "event": {
+      "value": {
+        "fontFamily": "{font-family.base}",
+        "fontWeight": "{font-weight.large.event}",
+        "lineHeight": "{line-height.large.event}",
+        "fontSize": "{font-size.large.event}"
+      },
+      "type": "typography"
+    },
+    "input": {
+      "value": {
+        "fontFamily": "{font-family.base}",
+        "fontWeight": "{font-weight.input}",
+        "lineHeight": "{line-height.input}",
+        "fontSize": "{font-size.input}"
+      },
+      "type": "typography"
+    },
+    "calendar": {
+      "cell": {
+        "value": {
+          "fontFamily": "{font-family.base}",
+          "fontWeight": "{font-weight.calendar.cell}",
+          "lineHeight": "{line-height.calendar.large.cell}",
+          "fontSize": "{font-size.calendar.large.cell}"
+        },
+        "type": "typography"
+      },
+      "title": {
+        "value": {
+          "fontFamily": "{font-family.base}",
+          "fontWeight": "{font-weight.calendar.title}",
+          "lineHeight": "{line-height.calendar.title}",
+          "fontSize": "{font-size.calendar.title}"
+        },
+        "type": "typography"
+      },
+      "subtitle": {
+        "value": {
+          "fontFamily": "{font-family.base}",
+          "fontWeight": "{font-weight.calendar.subtitle}",
+          "lineHeight": "{line-height.calendar.subtitle}",
+          "fontSize": "{font-size.calendar.subtitle}"
+        },
+        "type": "typography"
+      }
+    },
+    "form": {
+      "event": {
+        "title": {
+          "value": {
+            "fontFamily": "{font-family.base}",
+            "fontWeight": "{font-weight.form.event.title}",
+            "lineHeight": "{line-height.form.event.title}",
+            "fontSize": "{font-size.form.event.title}"
+          },
+          "type": "typography"
+        }
+      }
+    }
+  }
+}
