@@ -2,7 +2,7 @@
 ## [Просмотр Работы](https://igorpichnenko.github.io/old-test/)
 
 
-##[Макет] (https://www.figma.com/file/3pZnrTCIC9Tqir1O7bdVjw/Test-Tokens?fuid=964842628383046106)
+## [Макет](https://www.figma.com/file/3pZnrTCIC9Tqir1O7bdVjw/Test-Tokens?fuid=964842628383046106)
 
 # Basic Style Dictionary
 
