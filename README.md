@@ -1,6 +1,9 @@
 ## [Просмотр Storybook](https://igorpichnenko.github.io/test-task)
 ## [Просмотр Работы](https://igorpichnenko.github.io/old-test/)
 
+
+##[Макет] (https://www.figma.com/file/3pZnrTCIC9Tqir1O7bdVjw/Test-Tokens?fuid=964842628383046106)
+
 # Basic Style Dictionary
 
 This example code is bare-bones to show you what this framework can do. If you have the style-dictionary module installed globally, you can `cd` into this directory and run:
